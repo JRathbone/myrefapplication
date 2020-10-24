@@ -1,0 +1,18 @@
+@import '~@angular/material/theming';
+
+
+$custom-typography: mat-typography-config($font-family: '"Copse", sans-serif;');
+@include mat-core($custom-typography);
+
+$ref-app-primary: mat-palette($mat-blue-grey, 900);
+$ref-app-accent:  mat-palette($mat-cyan, A200, A100, A400);
+
+$ref-app-theme: mat-light-theme((
+  color: (
+    primary: $ref-app-primary,
+    accent: $ref-app-accent
+  )
+));
+
+
+@include angular-material-theme($ref-app-theme);

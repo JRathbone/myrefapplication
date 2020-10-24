@@ -1,0 +1,42 @@
+mat-grid-list {
+    width:95%;
+    margin-left: 2.5%;
+}
+.landing-container{
+    padding-top: 3rem;
+}
+
+mat-grid-tile {
+    border-radius: 15px;
+    color: white;
+    border: 1px solid #66fcf1;
+}
+
+.weather {
+    border-radius: 23px;
+    width: 100%;
+    height: 100%;
+}
+
+.profile {
+    width: 100%;
+    margin-left:0;
+}
+
+img {
+    border-radius: 50%;
+    height: 50%;
+    border: 4px solid #66fcf1;
+}
+.number{
+    color: #66fcf1;
+    font-size: 24px;
+}
+
+p {
+    font-size: 24px;
+    
+}
+mat-grid-tile .gamesCompleted{
+    justify-content: flex-end;
+}

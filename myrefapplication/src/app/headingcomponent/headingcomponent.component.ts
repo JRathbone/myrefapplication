@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-headingcomponent',
   templateUrl: './headingcomponent.component.html',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeadingcomponentComponent implements OnInit {
 
-  constructor() { }
+  today: string = null;
+  constructor() { 
+    
+  }
+
+  getTodaysDate(): string{
+    return this.today;
+  }
 
   ngOnInit(): void {
+    this.today = new Date().toLocaleDateString()
   }
 
 }
