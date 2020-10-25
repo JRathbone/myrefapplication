@@ -1,24 +1,37 @@
 <div class="landing-container">
-    <mat-grid-list cols="12" rowHeight="200px" gutterSize="100px">
+    <mat-grid-list cols="12" rowHeight="150px" gutterSize="100px">
       <mat-grid-tile colspan="3" rowspan="2">
           <div class="weather">
             <p>THE WEATHER PANEL</p>
           </div>
       </mat-grid-tile>
       <mat-grid-tile colspan="6" rowspan="2" class="profile"> 
-          <mat-grid-list cols="3" rowHeight="4:1" >
+          <mat-grid-list cols="3" rowHeight="5:1" class="profileList">
 
-            <mat-grid-tile colspan="1" rowspan="4">
+            <mat-grid-tile colspan="1" rowspan="4" class="profileList">
               <img src="../../assets/img_avatar.png" alt="Avatar">
             </mat-grid-tile>
 
-            <mat-grid-tile colspan="2" rowspan="1" class="gamesCompleted">
-               <p>Career Games Completed: <span class="number">22</span></p>
+            <mat-grid-tile colspan="2" rowspan="1" class="profileList">
+               <p class="gamesCompleted">Career Games Completed: <span class="number">98</span></p>
             </mat-grid-tile>
 
-            <mat-grid-tile colspan="2" rowspan="3">LAYER 3</mat-grid-tile>
+            <mat-grid-tile colspan="2" rowspan="3" class="profileList">
+              <h2 class="name">Justin Rathbone</h2>
+              <p class="certLevel"><i>2020 Certification Level:</i> Grade 8</p>
+            </mat-grid-tile>
             
-            <mat-grid-tile colspan="3" rowspan="2">LAYER 4</mat-grid-tile>
+            <mat-grid-tile colspan="1" rowspan="2" class="stats">
+              <h3>YTD Earnings: <br><h3 class="number">$134.54</h3></h3>
+            </mat-grid-tile>
+
+            <mat-grid-tile colspan="1" rowspan="2" class="stats">
+              <h3>2020 Games Completed: <br><h3 class="number">24</h3></h3>
+            </mat-grid-tile>
+
+            <mat-grid-tile colspan="1" rowspan="2" class="stats">
+              <h3>2020 Games Left: <br><h3 class="number">10</h3></h3>
+            </mat-grid-tile>
           </mat-grid-list>
       </mat-grid-tile>
       <mat-grid-tile colspan="3" rowspan="2"> pee pee</mat-grid-tile>

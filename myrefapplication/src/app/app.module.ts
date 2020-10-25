@@ -18,7 +18,7 @@ import { LandingComponent } from './landing/landing.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatToolbarModule,
+    MatToolbarModule, 
     BrowserAnimationsModule,
     MatIconModule,
     MatGridListModule
