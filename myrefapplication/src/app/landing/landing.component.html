@@ -1,9 +1,12 @@
+<div>
+  <p class="today">{{today}}: All Games on as scheduled.</p>
+</div>
+
+
 <div class="landing-container">
     <mat-grid-list cols="12" rowHeight="150px" gutterSize="100px">
-      <mat-grid-tile colspan="3" rowspan="2">
-          <div class="weather">
-            <p>THE WEATHER PANEL</p>
-          </div>
+      <mat-grid-tile colspan="3" rowspan="2" class="weather">
+          <h6>The weather Panel</h6>
       </mat-grid-tile>
       <mat-grid-tile colspan="6" rowspan="2" class="profile"> 
           <mat-grid-list cols="3" rowHeight="5:1" class="profileList">
@@ -34,6 +37,8 @@
             </mat-grid-tile>
           </mat-grid-list>
       </mat-grid-tile>
-      <mat-grid-tile colspan="3" rowspan="2"> pee pee</mat-grid-tile>
+      <mat-grid-tile colspan="3" rowspan="2" class="announcements">
+        <h6>Announcements</h6>
+      </mat-grid-tile>
   </mat-grid-list>
 </div>
