@@ -6,7 +6,8 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from "@angular/material/icon";
 import { MatGridListModule } from '@angular/material/grid-list';
-import { LandingComponent } from './landing/landing.component';
+import { LandingComponent } from './Components/Components/landing/landing.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LandingComponent } from './landing/landing.component';
     MatToolbarModule, 
     BrowserAnimationsModule,
     MatIconModule,
-    MatGridListModule
+    MatGridListModule,
+    HttpClientModule
     
   ],
   providers: [],
