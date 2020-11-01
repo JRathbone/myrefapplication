@@ -2,6 +2,15 @@ mat-grid-list {
     width:95%;
     margin-left: 2.5%;
 }
+h2{
+    color: #66fcf1;
+    margin-bottom:0px;
+}
+h1,h3{
+    color: #c5c6c7;
+    margin-top: 0px;
+}
+
 .today {
     font-size: 24px;
     color: #c5c6c7;
@@ -85,4 +94,22 @@ mat-grid-tile .stats {
 h6{
     text-align: center;
     color: #c5c6c7;
+}
+
+mat-grid-tile .weatherList{
+    border: none;
+    margin-left: 0;
+}
+
+.weatherIcon{
+    border: none;
+    height: 175px;
+}
+.weatherTile{
+    border: none;
+    font-size: 24px;
+}
+.temp{
+    font-size: 72px;
+    
 }
