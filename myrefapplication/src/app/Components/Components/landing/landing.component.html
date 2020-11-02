@@ -6,7 +6,7 @@
 <div class="landing-container">
     <mat-grid-list cols="12" rowHeight="150px" gutterSize="100px">
       <mat-grid-tile colspan="3" rowspan="2" class="weather">
-          <mat-grid-list cols="6" rowHeight="1:1" class="weatherList">
+          <mat-grid-list cols="6" rowHeight=".95:1" class="weatherList">
             <mat-grid-tile colspan="6" rowspan="2" class="weatherTile">
               <h2>{{city}}, {{state}}</h2>
             </mat-grid-tile>
@@ -19,9 +19,17 @@
               <img src="{{iconUrl}}" class = "weatherIcon">
             </mat-grid-tile>
 
-            <mat-grid-tile colspan="3" rowspan="1" class="weatherTile">
-              <h3>H: 35°   L: 32°</h3>
+            <mat-grid-tile colspan="1" rowspan="1" class="weatherTile">
+              <h5>High: <br>{{maxTemp}}°</h5>
             </mat-grid-tile>
+            <mat-grid-tile colspan="1" rowspan="1" class="weatherTile">
+              
+            </mat-grid-tile>
+            <mat-grid-tile colspan="1" rowspan="1" class="weatherTile">
+              <h5>Low: <br>{{minTemp}}°</h5>
+            </mat-grid-tile>
+
+            
 
             <mat-grid-tile colspan="3" rowspan="1" class="weatherTile">
               <h3>{{condition}}</h3>

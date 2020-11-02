@@ -16,6 +16,8 @@ export class LandingComponent implements OnInit {
   windMph: number = 0;
   humidity: number  = 0;
   feelsLikeF: number = 0;
+  maxTemp: number = 0;
+  minTemp: number = 0;
   city: string = "";
   state: string = "";
 
@@ -43,6 +45,10 @@ export class LandingComponent implements OnInit {
     this.windMph = data.current.wind_mph;
     this.humidity = data.current.humidity;
     this.feelsLikeF = data.current.feelslike_f;
+    this.maxTemp = data.forecast.forecastday[0].day.maxtemp_f;
+    this.minTemp = data.forecast.forecastday[0].day.mintemp_f;
+    
   }
 }
   
+//forecast.forecastday[0].day.maxtemp_f

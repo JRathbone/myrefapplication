@@ -6,9 +6,13 @@ h2{
     color: #66fcf1;
     margin-bottom:0px;
 }
-h1,h3{
+h1,h3,h5{
     color: #c5c6c7;
     margin-top: 0px;
+}
+h5{
+    position: absolute;
+    top: 10px;
 }
 
 .today {
@@ -108,6 +112,7 @@ mat-grid-tile .weatherList{
 .weatherTile{
     border: none;
     font-size: 24px;
+    
 }
 .temp{
     font-size: 72px;
