@@ -32,7 +32,7 @@ export class LandingComponent implements OnInit {
 
   ngOnInit(): void {  
     this.today = new Date().toLocaleDateString()
-    this.backend.get().subscribe((data) => this.assignValues(data));
+    //this.backend.get().subscribe((data) => this.assignValues(data));
   }
 
   assignValues(data)
@@ -47,7 +47,6 @@ export class LandingComponent implements OnInit {
     this.feelsLikeF = data.current.feelslike_f;
     this.maxTemp = data.forecast.forecastday[0].day.maxtemp_f;
     this.minTemp = data.forecast.forecastday[0].day.mintemp_f;
-    
   }
 }
   

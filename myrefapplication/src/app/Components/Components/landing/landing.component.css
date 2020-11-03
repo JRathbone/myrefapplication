@@ -1,18 +1,41 @@
-mat-grid-list {
-    width:95%;
-    margin-left: 2.5%;
-}
+html, body { height: 100%; }
+
 h2{
     color: #66fcf1;
     margin-bottom:0px;
 }
+
 h1,h3,h5{
     color: #c5c6c7;
     margin-top: 0px;
 }
+
 h5{
     position: absolute;
     top: 10px;
+}
+
+h6{
+    text-align: center;
+    color: #c5c6c7;
+}
+img {
+    border-radius: 50%;
+    height: 75%;
+    border: 4px solid #66fcf1;
+}
+p {
+    font-size: 18px;
+}
+
+mat-grid-list {
+    width:95%;
+    margin-left: 2.5%;
+}
+
+mat-grid-tile {
+    border-radius: 15px;
+    border: 1px solid #66fcf1;
 }
 
 .today {
@@ -29,10 +52,6 @@ h5{
     margin-left: 0;
     color: #c5c6c7;
     border: none;
-}
-mat-grid-tile {
-    border-radius: 15px;
-    border: 1px solid #66fcf1;
 }
 
 .weather {
@@ -53,21 +72,13 @@ mat-grid-tile {
     box-shadow: 1px 3px 2px 3px #66fcf1;
 }
 
-img {
-    border-radius: 50%;
-    height: 75%;
-    border: 4px solid #66fcf1;
-}
 .number{
     color: #66fcf1;
     margin-top: 0px;
     text-align: center;
 }
 
-p {
-    font-size: 18px;
-    
-}
+
 .gamesCompleted{
     position: absolute;
     right: 5%;
@@ -118,3 +129,29 @@ mat-grid-tile .weatherList{
     font-size: 72px;
     
 }
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+    mat-grid-list {
+        display: none;
+    }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    html, body{
+        width: auto;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

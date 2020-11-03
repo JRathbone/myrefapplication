@@ -10,3 +10,47 @@ span{
   padding-left: 2rem;
   font-size: 32px;
 }
+
+.material-icons{
+  display: none;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+  .links{
+    display: none;
+  }
+  .material-icons{
+    display: inherit;
+    padding-right: 55%;
+  }
+
+  img{
+    width: 26px;
+    height: auto;
+    padding-right: 5px;
+  }
+  .logo{
+    text-align: center;
+  }
+
+  mat-toolbar{
+    padding: 0px;
+  }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
