@@ -129,13 +129,22 @@ mat-grid-tile .weatherList{
     font-size: 72px;
     
 }
+.mobile-landing-container{
+    display: none;
+}
 
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     
-    mat-grid-list {
+    .landing-container {
         display: none;
+    }
+    .mobile-landing-container{
+        display: inherit;
+    }
+    .today{
+        font-size: 12px;
     }
 
 }
