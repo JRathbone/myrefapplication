@@ -19,19 +19,14 @@
               <img src="../../../../assets/113.png" class = "weatherIcon">
             </mat-grid-tile>
 
-            <mat-grid-tile colspan="1" rowspan="1" class="weatherTile">
+            <mat-grid-tile colspan="3" rowspan="1" class="weatherTile">
               <h5 style="margin-left: 1vh;">High: 56°</h5>
             </mat-grid-tile>
-            <mat-grid-tile colspan="1" rowspan="1" class="weatherTile">
-              
-            </mat-grid-tile>
-            <mat-grid-tile colspan="1" rowspan="1" class="weatherTile">
-              <h5 style="margin-left: 2vh;">Low: <br>56°</h5>
-            </mat-grid-tile>
-            
+
             <mat-grid-tile colspan="3" rowspan="1" class="weatherTile">
-              <h3>windy</h3>
+              <h5 style="margin-left: 2vh;">Low: 56°</h5>
             </mat-grid-tile>
+
 
             <mat-grid-tile colspan="2" rowspan="1" class="weatherTile">
               <h6>Feels like: <br>5°</h6>
@@ -74,7 +69,7 @@
           </mat-grid-list>
       </mat-grid-tile>
       <mat-grid-tile colspan="3" rowspan="2" class="announcements">
-        <mat-grid-list cols="1" rowHeight="10vh" >
+        <mat-grid-list cols="1" rowHeight="13vh" >
           <mat-grid-tile colspan="1" rowspan="1">
             <h6>Announcements</h6>
           </mat-grid-tile>
@@ -82,6 +77,7 @@
            <ul>
              <li>Aspen Park games postponed</li>
              <li>Cornhusker state games next week!</li>
+             <li>Help needed at Spirit Park</li>
            </ul>
           </mat-grid-tile>
         </mat-grid-list>
@@ -122,10 +118,66 @@
           <h1>75°</h1>
         </mat-grid-tile>
         <mat-grid-tile colspan="1" rowspan="1">
-          <h6>High: 80°</h6>
+          <h6>High:<br>80°</h6>
         </mat-grid-tile>
         <mat-grid-tile colspan="1" rowspan="1">
-          <h6>Low: 56°</h6>
+          <h6>Low:<br>56°</h6>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+     <mat-grid-list cols="1" rowHeight="4vh" class="announcementsMobile">
+       <mat-grid-tile colspan="1" rowspan="1">
+         <h6>Announcements</h6>
+       </mat-grid-tile>
+       <mat-grid-tile colspan="1" rowspan="2">
+        <ul>
+          <li>Aspen Park games postponed</li>
+          <li>Cornhusker state games next week!</li>
+        </ul>
+       </mat-grid-tile>
+     </mat-grid-list>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<div class="tablet-landing-container">
+  <mat-grid-list cols="2" rowHeight="19vh" gutterSize="10px">
+    <mat-grid-tile colspan="1" rowspan="2">
+      <mat-grid-list cols="2" rowHeight="1.95:1" gutterSize="10px" class="mobileProfile">
+      <mat-grid-tile colspan="1" rowspan="2">
+        <img src="../../../../assets/img_avatar.png" alt="my img"/>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="2">
+        <p>Justin Rathbone</p>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1">
+        <p class="gamesCompleted">Career Games Completed: <span class="number">98</span></p>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1">
+        <p class="gamesCompleted">YTD Earnings: <span class="number">$89</span></p>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1">
+        <p class="gamesCompleted">2020 Games Left: <br> <span class="number">12</span></p>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1">
+        <p class="gamesCompleted">2020 Games Completed: <br> <span class="number">52</span></p>
+      </mat-grid-tile>
+      </mat-grid-list> 
+    </mat-grid-tile> 
+    <mat-grid-tile colspan="1" rowspan="1" class="weatherMobile">
+      <mat-grid-list cols="4" rowHeight="5vh">
+        <mat-grid-tile colspan="2" rowspan="2">
+          <img src="../../../../assets/113.png" alt="my img" style="border: none;"/>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2" rowspan="1">
+          <h1>75°</h1>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1" rowspan="1">
+          <h6>High:<br>80°</h6>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1" rowspan="1">
+          <h6>Low:<br>56°</h6>
         </mat-grid-tile>
       </mat-grid-list>
     </mat-grid-tile>

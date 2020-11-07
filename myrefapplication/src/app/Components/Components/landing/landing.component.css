@@ -131,6 +131,22 @@ mat-grid-tile .weatherList{
     display: none;
 }
 
+.announcements mat-grid-tile{
+    border: none;
+}
+
+.announcements li{
+    font-size: 3vh;
+    margin: 1vh;
+}
+
+.announcements h6{
+    font-size: 4vh;
+}
+.tablet-landing-container{
+    display: none;
+}
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -200,23 +216,169 @@ mat-grid-tile .weatherList{
 
     .announcementsMobile mat-grid-tile{
         border: none;
-        font-size: 2.75vh;
     }
     
-    
+    mat-grid-tile{
+        box-shadow: 1px 3px 2px 3px #66fcf1;
+    }
+    .tablet-landing-container{
+        display: none;
+    }
 
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    html, body{
-        width: auto;
+@media only screen and (max-width: 600px) {
+    .tablet-landing-container{
+        display: none;
+    }
+    img {
+        border-radius: 50%;
+        height: 80%;
+        border: 2px solid #66fcf1;
+        margin: 0 auto;
+    }
+    p{
+        color: #c5c6c7;
+        margin-top: 1vh;
+        font-size: 1.25vh;
+    }
+
+    .landing-container {
+        display: none;
+    }
+    .mobile-landing-container{
+        display: inherit;
+    }
+    .today{
+        font-size: 1.5vh;
+    }
+    .mobileProfile mat-grid-tile{
+        border: none;
+        margin: 0 auto;
+        border-radius: 0%;
+    }
+    mat-grid-list{
+        margin: 0 auto;
+    }
+    .mobileProfile{
+        margin-top: -1rem;
+    }
+    .mobileProfile p{
+        font-size: 2.5vw;
+        text-align: center;
+    }
+
+    .weatherMobile img{
+        height: 100%;
+    }
+
+    .weatherMobile mat-grid-tile{
+        border: none;
+        border-radius: 0px;
+        font-size: 3vh;
+    }
+
+    .weatherMobile h6{
+        font-size: 1.5vh;
+    }
+
+    .weatherMobile h1{
+        font-size: 3vh;
+        margin-top: 1vh;
+        color: #66fcf1;
+    }
+
+    .announcementsMobile li{
+        color: #c5c6c7;
+        font-size: 1.3vh;
+        margin: 1vh;
+    }
+
+    .announcementsMobile mat-grid-tile{
+        border: none;
+    }
+
+    mat-grid-tile{
+        box-shadow: 1px 3px 2px 3px #66fcf1;
     }
     
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
+@media only screen and (max-width: 769px) {
+    .mobile-landing-container{
+        display: none;
+    }
+
+    img {
+        border-radius: 50%;
+        height: 80%;
+        border: 2px solid #66fcf1;
+        margin: 0 auto;
+    }
+    p{
+        color: #c5c6c7;
+        margin-top: 1vh;
+        font-size: 1.25vh;
+    }
+
+    .landing-container {
+        display: none;
+    }
+    .today{
+        font-size: 3vh;
+    }
+    .mobileProfile mat-grid-tile{
+        border: none;
+        margin: 0 auto;
+        border-radius: 0%;
+    }
+    mat-grid-list{
+        margin: 0 auto;
+    }
+    .mobileProfile{
+        margin-top: -1rem;
+    }
+    .mobileProfile p{
+        font-size: 2.5vw;
+        text-align: center;
+    }
+
+    .weatherMobile img{
+        height: 110%;
+    }
+
+    .weatherMobile mat-grid-tile{
+        border: none;
+        border-radius: 0px;
+        font-size: 3vh;
+    }
+
+    .weatherMobile h6{
+        font-size: 2vh;
+    }
+
+    .weatherMobile h1{
+        font-size: 4vh;
+        margin-top: 1vh;
+        color: #66fcf1;
+    }
+
+    .announcementsMobile li{
+        color: #c5c6c7;
+        font-size: 2vh;
+        margin: 1vh;
+    }
+    .announcementsMobile h6{
+        font-size: 2vh;
+        margin-top: 2vh;
+    }
+
+    .announcementsMobile mat-grid-tile{
+        border: none;
+    }
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {}
