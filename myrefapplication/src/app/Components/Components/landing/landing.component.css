@@ -137,6 +137,18 @@ mat-grid-tile .weatherList{
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     
+    img {
+        border-radius: 50%;
+        height: 80%;
+        border: 2px solid #66fcf1;
+        margin: 0 auto;
+    }
+    p{
+        color: #c5c6c7;
+        margin-top: 5px;
+        font-size: 12px;
+    }
+
     .landing-container {
         display: none;
     }
@@ -146,6 +158,26 @@ mat-grid-tile .weatherList{
     .today{
         font-size: 12px;
     }
+    .mobileProfile mat-grid-tile{
+        border: none;
+        margin: 0 auto;
+        border-radius: 0%;
+    }
+    .gamesCompleted{
+        font-size: 12px;
+    }
+    mat-grid-list{
+        margin: 0 auto;
+    }
+    .mobileProfile{
+        margin-top: -1rem;
+    }
+    .mobileProfile p{
+        font-size: 2.5vw;
+        text-align: center;
+    }
+    
+    
 
 }
 
