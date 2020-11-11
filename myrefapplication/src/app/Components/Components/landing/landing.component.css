@@ -1,8 +1,6 @@
-html, body { height: 100%; }
-
 h2{
     color: #66fcf1;
-    margin-bottom:1vh;
+    margin-bottom:1vh;   
 }
 
 h1,h3,h5{
@@ -42,9 +40,11 @@ mat-grid-tile {
     width: 100%;
     text-align: center;
 }
+
 .landing-container{
-    padding-top: 1vh;
+    display: inline;
 }
+
 .profileList{
     width:100%;
     margin-left: 0;
@@ -76,15 +76,13 @@ mat-grid-tile {
     text-align: center;
 }
 
-
 .gamesCompleted{
-    
     font-size:28px;
 }
 
 .name{
     color: #66fcf1;
-    font-size: 64px;
+    font-size: 6vh;
     position: absolute;
     left: 1%;
     top: -10%;
@@ -93,14 +91,14 @@ mat-grid-tile {
     position: absolute;
     left: 5%;
     top: 50%;
-    font-size: 20px;
+    font-size: 2vh;
 }
 
 mat-grid-tile .stats {
     color: #c5c6c7;
     margin-left: 0;
     border: none;
-    font-size: 18px;
+    font-size: 2vh;
 }
 
 h6{
@@ -115,7 +113,7 @@ mat-grid-tile .weatherList{
 
 .weatherIcon{
     border: none;
-    height: 175px;
+    height: 18vh;
 }
 .weatherTile{
     border: none;
@@ -124,8 +122,8 @@ mat-grid-tile .weatherList{
 }
 .temp{
     font-size: 7vh;
-    
 }
+
 .mobile-landing-container{
     display: none;
 }
@@ -135,17 +133,13 @@ mat-grid-tile .weatherList{
 }
 
 .announcements li{
-    font-size: 3vh;
-    margin: 1vh;
+    font-size: 2vh;
+    margin: 3vh;
 }
 
 .announcements h6{
     font-size: 4vh;
 }
-.tablet-landing-container{
-    display: none;
-}
-
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -194,8 +188,6 @@ mat-grid-tile .weatherList{
         font-size: 3vh;
     }
 
-    
-
     .weatherMobile h1{
         font-size: 3vh;
         margin-top: 1vh;
@@ -210,17 +202,12 @@ mat-grid-tile .weatherList{
 
     .announcementsMobile mat-grid-tile{
         border: none;
-    }
-    
-    
-    .tablet-landing-container{
-        display: none;
-    }
+    } 
 
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
     img {
         border-radius: 50%;
         max-width: 100%;
@@ -286,13 +273,9 @@ mat-grid-tile .weatherList{
     
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 769px) {
-    
-}
-
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    
+@media only screen and (max-width: 992px) {
+
+
 }
 
