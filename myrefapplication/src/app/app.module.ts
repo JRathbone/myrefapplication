@@ -6,13 +6,15 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from "@angular/material/icon";
 import { MatGridListModule } from '@angular/material/grid-list';
-import { LandingComponent } from './Components/Components/landing/landing.component';
+import { LandingComponent } from '../app/Components/landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AssignedGamesComponent } from './Components/assigned-games/assigned-games.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent
+    LandingComponent,
+    AssignedGamesComponent
   ],
   imports: [
     BrowserModule,
