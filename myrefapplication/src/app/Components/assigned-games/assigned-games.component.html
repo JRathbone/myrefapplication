@@ -1,9 +1,23 @@
 <div class="componentContainer">
     <h2 style="color: #66fcf1;">needs attention</h2>
   <div class="assignedGamesContainer">
-    <div>Justin</div>
-    <div>Rathbone</div>
-    <div>Omaha</div>
-    <div>Nebraska</div>
+    <mat-grid-list cols="2" rowHeight="9vh">
+      <mat-grid-tile colspan="2" rowspan="1">
+        <h3 style="color: #66fcf1;">December 22</h3>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" rowspan="2">
+        <div class="gameInfo">
+          <p style="margin-top: 10px;">2:00 PM</p>
+          <p>LSP 05</p>
+          <p>U14B</p>
+          <span></span>
+          <p style="text-align: left; margin-left: 3px; margin-top: .75vh;">H: Omaha Storm</p>
+          <p style="text-align: left; margin-left: 3px;">A: Elkhorn FC</p>
+          <h6 style="text-align: center; margin-left: 3px; margin-top: 2vh;">Center: <span style="color: #45A29E;">$25</span></h6>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1">Accept</mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1">Decline</mat-grid-tile>
+    </mat-grid-list> 
   </div>
 </div>

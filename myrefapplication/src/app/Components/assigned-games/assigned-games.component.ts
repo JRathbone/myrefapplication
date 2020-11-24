@@ -10,6 +10,7 @@ export class AssignedGamesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
