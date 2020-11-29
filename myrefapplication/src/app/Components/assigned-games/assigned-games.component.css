@@ -44,16 +44,12 @@
 
 .gameInfo p{
     margin: 0px auto;
-    font-size: .8vw;
-}
-
-.gameInfo h6{
-    font-size: 1vw;
+    font-size: 1.7vh;
 }
 
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 770px) {
     .assignedGamesContainer{
         justify-content: center;
         align-items: center;
@@ -61,12 +57,7 @@
 
     .gameInfo p{
         margin: 0px auto;
-        font-size: 3.5vw;
+        font-size: 1.7vh;
     }
 
-    .gameInfo h6{
-        font-size: 4vw;
-    }
-
-    
   }
