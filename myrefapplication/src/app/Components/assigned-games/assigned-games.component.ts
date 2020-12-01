@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssignedGamesComponent implements OnInit {
 
+  public productUrl = '../../backend/schedule.json';
+
   constructor() { }
 
   ngOnInit(): void {
+    
+
     
   }
 
