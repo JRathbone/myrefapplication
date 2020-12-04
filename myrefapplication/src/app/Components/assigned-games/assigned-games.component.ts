@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IGame } from 'src/app/backend/game';
+import { scheduleService } from 'src/app/backend/schedule.service';
 
 @Component({
   selector: 'assigned-games',
@@ -8,13 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class AssignedGamesComponent implements OnInit {
 
   public productUrl = '../../backend/schedule.json';
+  assignedGames: IGame[] = [];
+  constructor(private scheduleService: scheduleService) { 
 
-  constructor() { }
+
+  }
 
   ngOnInit(): void {
-    
-
-    
+     this.assignedGames = this.scheduleService.getSchedule();
+     console.log(this.assignedGames);
   }
 
 }
