@@ -53,7 +53,7 @@ export class scheduleService
                  "notes": "bad parents",
                  "numYellowCards": 1,
                  "numRedCards": 2,
-                 "hasBeenApprovedOrDeclined": false,
+                 "hasBeenApprovedOrDeclined": true,
                  "hasBeenCompleted": false
              },
              {

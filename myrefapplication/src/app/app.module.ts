@@ -9,6 +9,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { LandingComponent } from '../app/Components/landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AssignedGamesComponent } from './Components/assigned-games/assigned-games.component';
+import { MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AssignedGamesComponent } from './Components/assigned-games/assigned-gam
     BrowserAnimationsModule,
     MatIconModule,
     MatGridListModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule
     
   ],
   providers: [],

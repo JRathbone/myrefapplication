@@ -17,8 +17,10 @@ export class AssignedGamesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-     this.assignedGames = this.scheduleService.getSchedule();
-     console.log(this.assignedGames);
+     this.assignedGames = this.scheduleService.getSchedule().filter(game => game.hasBeenApprovedOrDeclined == false);
+    
   }
+
+  
 
 }
