@@ -1,0 +1,62 @@
+/* Common Styles */
+.componentContainer {
+    color: #fff;
+    height: auto;
+    margin: auto;
+    margin-top: 10vh;
+    width: 95%;
+}
+
+.assignedGamesContainer mat-grid-list{
+    height: 25vh;
+    width: 10vw;
+    min-width: 150px;
+    min-height: 250px;
+    color: white;
+    border: 3px solid #0B0C10;
+    box-shadow: -2px 2px 3px 2px #0B0C10;
+    margin: 2vh 1vw;
+    border-radius: 10px;
+}
+
+
+/* Flexbox Styles */
+.assignedGamesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 1px 3px 2px 3px #66fcf1;
+    border: 3px solid #66fcf1;
+    border-radius: 15px;
+    background-color: #1F2833;
+}
+
+.gameInfo{
+    background-color: #0B0C10;
+    border: 2px solid #66fcf1;
+    width: 80%;
+    margin: auto;
+    height: 97%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.gameInfo p{
+    margin: 0px auto;
+    font-size: 1.7vh;
+}
+
+
+@media only screen and (max-width: 770px) {
+    .assignedGamesContainer{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gameInfo p{
+        margin: 0px auto;
+        font-size: 1.7vh;
+    }
+
+  }
