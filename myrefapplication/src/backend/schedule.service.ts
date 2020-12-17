@@ -14,8 +14,6 @@ export class scheduleService
 
     getSchedule(): Observable<IGame[]>
     {
-        
-        return this.http.get<IGame[]>(this.scheduleURL);
-        
+        return this.http.get<IGame[]>(this.scheduleURL) 
     }
 }

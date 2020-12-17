@@ -1,7 +1,7 @@
 <div class="componentContainer">
     <h2 style="color: #66fcf1;">upcoming games</h2>
   <div class="assignedGamesContainer">
-    <mat-grid-list cols="2" rowHeight="9vh" *ngFor="let game of assignedGames" class="gameTile">
+    <mat-grid-list cols="2" rowHeight="9vh" *ngFor="let game of upcomingGames" class="gameTile">
       
       <mat-grid-tile colspan="2" rowspan="1" >
         <h3 style="color: #66fcf1;">{{game.gameDate | date:'LLLL dd'}}</h3>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IGame } from 'src/app/backend/game';
-import { scheduleService } from 'src/app/backend/schedule.service';
+import { IGame } from 'src/backend/game';
+import { scheduleService } from 'src/backend/schedule.service';
 
 
 @Component({
@@ -19,9 +19,13 @@ export class AssignedGamesComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.scheduleService.getSchedule().subscribe({next: games => this.assignedGames = games})
+    this.scheduleService.getSchedule().subscribe({next: games => {
+      this.assignedGames = games.filter(games => games.hasBeenApprovedOrDeclined == false);
+    }})
     
   }
+
+  
 
   
 
