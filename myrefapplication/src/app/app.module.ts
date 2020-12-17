@@ -10,12 +10,17 @@ import { LandingComponent } from '../app/Components/landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AssignedGamesComponent } from './Components/assigned-games/assigned-games.component';
 import { MatButtonModule} from '@angular/material/button';
+import { UpcominggamesComponent } from './Components/upcoming-games/upcominggames/upcominggames.component';
+import { RecentgamesComponent } from './Components/recentgames/recentgames/recentgames.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    AssignedGamesComponent
+    AssignedGamesComponent,
+    UpcominggamesComponent,
+    RecentgamesComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +30,8 @@ import { MatButtonModule} from '@angular/material/button';
     MatIconModule,
     MatGridListModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule
     
   ],
   providers: [],

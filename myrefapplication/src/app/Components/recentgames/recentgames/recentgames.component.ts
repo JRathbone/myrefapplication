@@ -12,12 +12,11 @@ export class RecentgamesComponent implements OnInit {
   public productUrl = '../../backend/schedule.json';
   assignedGames: IGame[] = [];
   constructor(private scheduleService: scheduleService) { 
-
-
   }
 
   ngOnInit(): void {
-    this.assignedGames = this.scheduleService.getSchedule().filter(game => game.hasBeenApprovedOrDeclined == false);
+    //this.assignedGames = this.scheduleService.getSchedule().filter(game => game.hasBeenApprovedOrDeclined == false)
+    //.filter(game => game.gameDate > new Date);
   }
 
 }

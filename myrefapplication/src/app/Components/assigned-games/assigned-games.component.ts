@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IGame } from 'src/app/backend/game';
 import { scheduleService } from 'src/app/backend/schedule.service';
 
+
 @Component({
   selector: 'assigned-games',
   templateUrl: './assigned-games.component.html',
@@ -17,7 +18,8 @@ export class AssignedGamesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-     this.assignedGames = this.scheduleService.getSchedule().filter(game => game.hasBeenApprovedOrDeclined == false);
+    
+    this.scheduleService.getSchedule().subscribe({next: games => this.assignedGames = games})
     
   }
 
