@@ -5,7 +5,7 @@
        "awayTeam": "Vikings",
        "ageGroup": "U14",
        "gameLength": 45,
-       "gameDate": "Thu Dec 17 2020 14:14:19 GMT-0600 (Central Standard Time)",
+       "gameDate": "Thu Dec 19 2020 14:14:19 GMT-0600 (Central Standard Time)",
        "city": "Omaha",
        "state": "NE",
        "address": "111 Main St.",
@@ -20,7 +20,7 @@
         "numYellowCards": 1,
         "numRedCards": 2,
         "hasBeenApprovedOrDeclined": true,
-        "hasBeenCompleted": false
+        "hasBeenCompleted": true
     },
     {
         "gameNumber": 1,

@@ -21,7 +21,6 @@ export class UpcominggamesComponent implements OnInit {
     this.scheduleService.getSchedule().subscribe({next: games => {
       
       this.upcomingGames = games.filter(games => new Date(games.gameDate) > new Date && games.hasBeenApprovedOrDeclined == true);
-      
     }})
     
   }
