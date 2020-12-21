@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "myref-e63f1": {
+      "hosting": {
+        "myrefapplication": [
+          "myref-e63f1"
+        ]
+      }
+    }
+  }
+}

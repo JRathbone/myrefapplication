@@ -13,6 +13,9 @@ import { MatButtonModule} from '@angular/material/button';
 import { UpcominggamesComponent } from './Components/upcoming-games/upcominggames/upcominggames.component';
 import { RecentgamesComponent } from './Components/recentgames/recentgames/recentgames.component';
 import { RouterModule } from '@angular/router';
+import { AngularFirestoreModule } from '@angular/fire/firestore'
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { RouterModule } from '@angular/router';
     MatGridListModule,
     HttpClientModule,
     MatButtonModule,
-    RouterModule
+    RouterModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase)
     
   ],
   providers: [],
