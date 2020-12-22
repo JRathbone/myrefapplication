@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
 import { AngularFirestoreModule } from '@angular/fire/firestore'
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
+import { AngularFireDatabaseModule } from '@angular/fire/database'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { environment } from 'src/environments/environment';
     MatButtonModule,
     RouterModule,
     AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
     
   ],
   providers: [],
