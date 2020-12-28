@@ -13,7 +13,7 @@ export class AssignedGamesComponent implements OnInit {
   public productUrl = '../../backend/schedule.json';
   assignedGames: IGame[] = [];
   constructor(private scheduleService: scheduleService) { 
-
+  
 
   }
 
