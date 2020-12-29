@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatGridTileHeaderCssMatStyler } from '@angular/material/grid-list';
 import { IGame } from 'src/backend/game';
 import { scheduleService } from 'src/backend/schedule.service';
 
@@ -10,11 +11,16 @@ import { scheduleService } from 'src/backend/schedule.service';
 })
 export class AssignedGamesComponent implements OnInit {
 
-  public productUrl = '../../backend/schedule.json';
+  
   assignedGames: IGame[] = [];
+
   constructor(private scheduleService: scheduleService) { 
   
-
+    scheduleService.getSchedule().subscribe({
+      next: games => {
+        this.assignedGames = games.filter(game => game.hasBeenApprovedOrDeclined == false);
+      }
+    })
   }
 
   ngOnInit(): void {

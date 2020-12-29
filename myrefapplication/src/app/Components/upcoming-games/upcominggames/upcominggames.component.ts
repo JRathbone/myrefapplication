@@ -9,11 +9,15 @@ import { scheduleService } from 'src/backend/schedule.service';
 })
 export class UpcominggamesComponent implements OnInit {
 
-  public productUrl = '../../backend/schedule.json';
+  
   upcomingGames: IGame[] = [];
   
   constructor(private scheduleService: scheduleService) { 
-    
+    scheduleService.getSchedule().subscribe({
+      next: games => {
+        this.upcomingGames = games.filter(game => game.hasBeenApprovedOrDeclined == true && new Date(game.gameDate) > new Date);
+      }
+    })
 
   }
 
