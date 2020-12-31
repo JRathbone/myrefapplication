@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatGridTileHeaderCssMatStyler } from '@angular/material/grid-list';
 import { IGame } from 'src/backend/game';
 import { scheduleService } from 'src/backend/schedule.service';
 
@@ -25,12 +24,5 @@ export class AssignedGamesComponent implements OnInit {
 
   ngOnInit(): void {
     
-    
-    
   }
-
-  
-
-  
-
 }

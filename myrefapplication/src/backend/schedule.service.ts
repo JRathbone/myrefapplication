@@ -9,14 +9,21 @@ import { Observable } from 'rxjs';
 export class scheduleService
 {
     fullSchedule: Observable<IGame[]>;
+    database: AngularFireDatabase;
+
     constructor(db: AngularFireDatabase){
-        this.fullSchedule = db.list<IGame>('/').valueChanges();
-        
+        this.database = db;
+        this.fullSchedule = this.database.list<IGame>('/').valueChanges();  
     }
     
     getSchedule(): Observable<IGame[]>
     {
         return this.fullSchedule;
+    }
+
+    getGame(gamenumber: Number): IGame{
+        
+        return null;
     }
 
 }

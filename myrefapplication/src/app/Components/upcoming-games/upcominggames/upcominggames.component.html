@@ -18,10 +18,11 @@
         </div>
       </mat-grid-tile>
       <mat-grid-tile colspan="2" rowspan="1">
-        <button mat-raised-button color="Basic" >
+        <button mat-raised-button color="Basic" (click)="openDialog(game.gameNumber)">
           More Info
         </button>
       </mat-grid-tile>
+      
     </mat-grid-list>
   </div>
 </div>

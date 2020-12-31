@@ -17,6 +17,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore'
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database'
+import {MatDialogModule} from '@angular/material/dialog'
 
 @NgModule({
   declarations: [
@@ -38,8 +39,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database'
     RouterModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
-    
+    AngularFireDatabaseModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
