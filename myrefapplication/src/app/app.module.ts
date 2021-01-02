@@ -8,16 +8,17 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatGridListModule } from '@angular/material/grid-list';
 import { LandingComponent } from '../app/Components/landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AssignedGamesComponent } from './Components/assigned-games/assigned-games.component';
+import { AssignedGamesComponent } from './Components/landing/assigned-games/assigned-games.component';
 import { MatButtonModule} from '@angular/material/button';
-import { UpcominggamesComponent } from './Components/upcoming-games/upcominggames/upcominggames.component';
-import { RecentgamesComponent } from './Components/recentgames/recentgames/recentgames.component';
+import { UpcominggamesComponent } from './Components/landing/upcoming-games/upcominggames.component';
+import { RecentgamesComponent } from './Components/landing/recentgames/recentgames.component';
 import { RouterModule } from '@angular/router';
-import { AngularFirestoreModule } from '@angular/fire/firestore'
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database'
-import {MatDialogModule} from '@angular/material/dialog'
+import {MatDialogModule} from '@angular/material/dialog';
+import { LoginComponent } from './Components/login/login.component';
+import { DashboardComponent } from './Components/landing/dashboard/dashboard.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import {MatDialogModule} from '@angular/material/dialog'
     LandingComponent,
     AssignedGamesComponent,
     UpcominggamesComponent,
-    RecentgamesComponent
+    RecentgamesComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -36,8 +39,10 @@ import {MatDialogModule} from '@angular/material/dialog'
     MatGridListModule,
     HttpClientModule,
     MatButtonModule,
-    RouterModule,
-    AngularFirestoreModule,
+    RouterModule.forRoot([ 
+      
+      
+    ]),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     MatDialogModule

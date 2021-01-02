@@ -1,0 +1,486 @@
+
+h2{
+    color: #66fcf1;
+    margin-bottom:3vh;   
+}
+
+h1,h3,h5{
+    color: #c5c6c7;
+    margin-top: 0vh;
+}
+
+h5{
+    position: absolute;
+    top: 1vh;
+}
+
+h6{
+    text-align: center;
+    color: #c5c6c7;
+}
+img {
+    border-radius: 50%;
+    height: 75%;
+    border: 4px solid #66fcf1;
+}
+
+mat-grid-list {
+    width:95%;
+    margin: 0 auto;
+}
+
+mat-grid-tile {
+    border-radius: 15px;
+    border: 1px solid #66fcf1;
+    text-align: center;
+}
+
+.today {
+    font-size: 3vh;
+    color: #c5c6c7;
+    width: 100%;
+    text-align: center;
+}
+
+.landing-container{
+    display: inline;
+}
+
+.profileList{
+    width:100%;
+    margin-left: 0;
+    color: #c5c6c7;
+    border: none;
+}
+
+.weather {
+    border-radius: 23px;
+    
+    box-shadow: 1px 3px 2px 3px #66fcf1;
+}
+.announcements{
+    box-shadow: 1px 3px 2px 3px #66fcf1;
+    color: #c5c6c7;
+    font-size: 3vh;
+}
+
+.profile {
+    width: 100%;
+    margin-left:0;
+    box-shadow: 1px 3px 2px 3px #66fcf1;
+}
+
+.number{
+    color: #66fcf1;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.gamesCompleted{
+    font-size:28px;
+}
+
+.name{
+    color: #66fcf1;
+    font-size: 6vh;
+    position: absolute;
+    left: 1%;
+    top: -10%;
+}
+.certLevel{
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    font-size: 2vh;
+}
+
+mat-grid-tile .stats {
+    color: #c5c6c7;
+    margin-left: 0;
+    border: none;
+    font-size: 2vh;
+}
+
+h6{
+    text-align: center;
+    color: #c5c6c7;
+}
+
+mat-grid-tile .weatherList{
+    border: none;
+    margin-left: 0;
+}
+
+.weatherIcon{
+    border: none;
+    height: 18vh;
+}
+.weatherTile{
+    border: none;
+    font-size: 2.5vh;
+    
+}
+.temp{
+    font-size: 7vh;
+}
+
+.mobile-landing-container{
+    display: none;
+}
+
+.announcements mat-grid-tile{
+    border: none;
+}
+
+.announcements li{
+    font-size: 2vh;
+    margin: 3vh;
+}
+
+.announcements h6{
+    font-size: 4vh;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media screen and (max-width: 600px) and (min-width: 0px) {
+    
+    img {
+        border-radius: 50%;
+        height: auto;
+        
+        border: 2px solid #66fcf1;
+    }
+    p{
+        color: #c5c6c7;
+        font-size: 1.25vh;
+    }
+    h5{
+        font-size: 3vh;
+        color: #66fcf1;
+    }
+
+    .landing-container {
+        display: none;
+    }
+    .mobile-landing-container{
+        display: inherit;
+    }
+    .today{
+        font-size: 1.5vh;
+    }
+    .mobileProfile mat-grid-tile{
+        border: none;
+        border-radius: 0%;
+    }
+    mat-grid-list{
+        margin: 0 auto;
+    }
+
+    .mobileProfile p{
+        font-size: 1.5vh;
+        text-align: center;
+    }
+
+
+    .weatherMobile mat-grid-tile{
+        border: none;
+        border-radius: 0px;
+        font-size: 3vh;
+    }
+
+    .weatherMobile h1{
+        font-size: 3vh;
+        margin-top: 1vh;
+        color: #66fcf1;
+    }
+
+    .announcementsMobile li{
+        color: #c5c6c7;
+        font-size: 1.3vh;
+        margin: 1vh;
+    }
+
+    .announcementsMobile mat-grid-tile{
+        border: none;
+    } 
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media screen and (max-width: 768px) and (min-width: 601px) {
+    img {
+        border-radius: 50%;
+        max-width: 100%;
+        height: auto;
+        border: 2px solid #66fcf1;
+    }
+    h5{
+        font-size: 3vh;
+        color: #66fcf1;
+    }
+
+    .landing-container {
+        display: none;
+    }
+    .mobile-landing-container{
+        display: inherit;
+    }
+    .today{
+        font-size: 2vh;
+    }
+    .mobileProfile mat-grid-tile{
+        border: none;
+        border-radius: 0%;
+    }
+
+
+    .mobileProfile p{
+        font-size: 1.5vh;
+        text-align: center;
+    }
+
+
+    .weatherMobile mat-grid-tile{
+        border: none;
+        border-radius: 0px;
+        font-size: 3vh;
+        margin-top: 2px;
+    }
+
+    
+
+    .weatherMobile h1{
+        font-size: 3vh;
+        margin-top: 1vh;
+        color: #66fcf1;
+    }
+
+    .announcementsMobile li{
+        color: #c5c6c7;
+        font-size: 1.5vh;
+        margin: 1vh;
+    }
+
+    .announcementsMobile mat-grid-tile{
+        border: none;
+    }
+    
+    
+    .tablet-landing-container{
+        display: none;
+    }
+
+    
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media screen and (max-width: 1200px) and (min-width: 769px){
+    img {
+        border-radius: 50%;
+        height: auto;
+        border: 2px solid #66fcf1;
+    }
+    h5{
+        font-size: 3vw;
+        color: #66fcf1;
+    }
+
+    .landing-container {
+        display: none;
+    }
+    .mobile-landing-container{
+        display: inherit;
+    }
+    .today{
+        font-size: 3vw;
+    }
+    .mobileProfile mat-grid-tile{
+        border: none;
+        border-radius: 0%;
+    }
+
+
+    .mobileProfile p{
+        font-size: 1.5vw;
+        text-align: center;
+    }
+
+
+    .weatherMobile mat-grid-tile{
+        border: none;
+        border-radius: 0px;
+        font-size: 3vw;
+        margin-top: 2px;
+    }
+
+    
+
+    .weatherMobile h1{
+        font-size: 3vw;
+        margin-top: 1vw;
+        color: #66fcf1;
+    }
+
+    .announcementsMobile li{
+        color: #c5c6c7;
+        font-size: 1.5vw;
+        margin: 1vw;
+    }
+
+    .announcementsMobile mat-grid-tile{
+        border: none;
+    }
+    
+    
+    .tablet-landing-container{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1201px) {
+    h2{
+        color: #66fcf1;
+        margin-bottom:3vh;   
+        font-size: 2vw;
+    }
+    
+    h1,h3,h5{
+        color: #c5c6c7;
+        margin-top: 0vh;
+        font-size: 1.5vw;
+    }
+    
+    h5{
+        position: absolute;
+        top: 1vh;
+    }
+    
+    h6{
+        text-align: center;
+        color: #c5c6c7;
+        font-size: 1vw;
+    }
+    img {
+        border-radius: 50%;
+        width: 60%; 
+        height: auto;
+        border: 4px solid #66fcf1;
+    }
+    
+    mat-grid-list {
+        width:95%;
+        margin: 0 auto;
+    }
+    
+    mat-grid-tile {
+        border-radius: 15px;
+        border: 1px solid #66fcf1;
+        text-align: center;
+    }
+    
+    .today {
+        font-size: 3vh;
+        color: #c5c6c7;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .landing-container{
+        display: inline;
+    }
+    
+    .profileList{
+        width:100%;
+        margin-left: 0;
+        color: #c5c6c7;
+        border: none;
+    }
+    
+    .weather {
+        border-radius: 23px;
+        box-shadow: 1px 3px 2px 3px #66fcf1;
+    }
+    .announcements{
+        box-shadow: 1px 3px 2px 3px #66fcf1;
+        color: #c5c6c7;
+        
+    }
+    
+    .profile {
+        width: 100%;
+        margin-left:0;
+        box-shadow: 1px 3px 2px 3px #66fcf1;
+    }
+    
+    .number{
+        color: #66fcf1;
+        margin-top: 0px;
+        text-align: center;
+    }
+    
+    .gamesCompleted{
+        font-size:2vw;
+    }
+    
+    .name{
+        color: #66fcf1;
+        font-size: 4vh;
+        position: absolute;
+        left: 1%;
+        top: -10%;
+    }
+    .certLevel{
+        position: absolute;
+        left: 0vh;
+        top: 6vh;
+        font-size: 2vh;
+    }
+    
+    mat-grid-tile .stats {
+        color: #c5c6c7;
+        margin-left: 0;
+        border: none;
+        
+    }
+    
+    h6{
+        text-align: center;
+        color: #c5c6c7;
+    }
+    
+    mat-grid-tile .weatherList{
+        border: none;
+        margin-left: 0;
+    }
+    
+    .weatherIcon{
+        border: none;
+        height: auto;
+    }
+    .weatherTile{
+        border: none;
+        
+        
+    }
+    .temp{
+        font-size: 7vh;
+    }
+    
+    .mobile-landing-container{
+        display: none;
+    }
+    
+    .announcements mat-grid-tile{
+        border: none;
+    }
+    
+    .announcements li{
+        font-size: 2vh;
+        margin: 3vh;
+    }
+    
+    .announcements h6{
+        font-size: 2vh;
+    }
+}
+
