@@ -19,6 +19,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database'
 import {MatDialogModule} from '@angular/material/dialog';
 import { LoginComponent } from './Components/login/login.component';
 import { DashboardComponent } from './Components/landing/dashboard/dashboard.component'
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -40,12 +42,16 @@ import { DashboardComponent } from './Components/landing/dashboard/dashboard.com
     HttpClientModule,
     MatButtonModule,
     RouterModule.forRoot([ 
-      
+      {path: '', component: LoginComponent},
+      {path: 'login', component: LoginComponent},
+      {path: 'landing', component: LandingComponent}
       
     ]),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
