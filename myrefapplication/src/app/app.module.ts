@@ -20,7 +20,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { LoginComponent } from './Components/login/login.component';
 import { DashboardComponent } from './Components/landing/dashboard/dashboard.component'
 import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,11 @@ import { MatFormFieldModule} from '@angular/material/form-field';
     AngularFireDatabaseModule,
     MatDialogModule,
     MatCardModule,
-    MatFormFieldModule
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
