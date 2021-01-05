@@ -23,6 +23,7 @@ import { MatCardModule } from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { SignupComponent } from './Components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     UpcominggamesComponent,
     RecentgamesComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     RouterModule.forRoot([ 
       {path: '', component: LoginComponent},
       {path: 'login', component: LoginComponent},
-      {path: 'landing', component: LandingComponent}
+      {path: 'landing', component: LandingComponent},
+      {path: 'signup', component: SignupComponent}
       
     ]),
     AngularFireModule.initializeApp(environment.firebase),
