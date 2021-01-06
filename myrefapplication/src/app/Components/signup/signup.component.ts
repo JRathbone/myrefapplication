@@ -1,6 +1,6 @@
-import { EventEmitter, Input, Output } from '@angular/core';
+
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup,  FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -9,23 +9,21 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  form: FormGroup = new FormGroup({
-    displayName: new FormControl(''),
-    email: new FormControl(''),
-    password: new FormControl(''),
-  });
-  constructor() { }
+  signUpForm: FormGroup;
+
+  constructor(private fb: FormBuilder){}
 
   ngOnInit(): void {
+    this.signUpForm = this.fb.group({
+      fullName: ['',Validators.required, Validators.minLength(3)],
+      email: ['', Validators.required, Validators.email],
+      password: ['', Validators.required, Validators.minLength(6)]
+    });
   }
+  
 
   submit() {
-    if (this.form.valid) {
-      this.submitEM.emit(this.form.value);
-    }
+    
   }
-  @Input() error: string | null;
-
-  @Output() submitEM = new EventEmitter();
-
+  
 }

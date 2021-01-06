@@ -1,34 +1,31 @@
 <mat-card>
     <mat-card-title>Sign Up</mat-card-title>
 <mat-card-content>
-<form [formGroup]="form" (ngSubmit)="submit()">
+  <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+
+      <p>
+          <mat-form-field appearance="standard">
+              <input type="text" matInput placeholder="Full Name" formControlName="fullName" style="color: black;" autofocus>
+          </mat-form-field>
+      </p>
 
     <p>
-        <mat-form-field appearance="standard">
-            <input type="text" matInput placeholder="Full Name" formControlName="displayName">
-        </mat-form-field>
+      <mat-form-field appearance="standard">
+        <input type="email" matInput placeholder="Email" formControlName="email" style="color: black;">
+      </mat-form-field>
     </p>
 
-  <p>
-    <mat-form-field appearance="standard">
-      <input type="email" matInput placeholder="Email" formControlName="Email">
-    </mat-form-field>
-  </p>
+    <p>
+      <mat-form-field appearance="standard">
+        <input type="password" matInput placeholder="password" formControlName="password" >
+        <mat-hint align="start">Must be 10 characters</mat-hint>
+      </mat-form-field>
+    </p>
 
-  <p>
-    <mat-form-field appearance="standard">
-      <input type="password" matInput placeholder="Password" formControlName="password">
-    </mat-form-field>
-  </p>
+    <div class="button">
+      <button type="submit" mat-raised-button color="accent">Sign Up</button>
+    </div>
 
-  <p *ngIf="error" class="error">
-    {{ error }}
-  </p>
-
-  <div class="button">
-    <button type="submit" mat-raised-button color="accent">Login</button>
-  </div>
-
-</form>
+  </form>
 </mat-card-content>
 </mat-card>

@@ -15,6 +15,13 @@ span{
   display: none;
 }
 
+a[ng-reflect-router-link]
+{
+  color: white;
+  text-decoration: none;
+  color: #66fcf1;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     

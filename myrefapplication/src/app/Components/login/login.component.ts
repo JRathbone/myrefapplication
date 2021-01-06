@@ -1,8 +1,6 @@
-import { Output } from '@angular/core';
-import { EventEmitter } from '@angular/core';
-import { Input } from '@angular/core';
+
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,23 +8,19 @@ import {FormControl, FormGroup} from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  form: FormGroup = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl(''),
-  });
+  loginForm: FormGroup;
+
+  constructor(private fb: FormBuilder){}
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    
+    this.loginForm = this.fb.group({
+      email: ['', Validators.required, Validators.email],
+      password: ['', Validators.required, Validators.minLength(6)]
+    });
   }
+  
 
   submit() {
-    if (this.form.valid) {
-      this.submitEM.emit(this.form.value);
-    }
+    
   }
-  @Input() error: string | null;
-
-  @Output() submitEM = new EventEmitter();
 }
