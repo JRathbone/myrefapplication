@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from 'src/backend/user.service';
 
 
 @Component({
@@ -8,9 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myRef';
-
-  constructor()
+  
+  isLoggedIn;
+  constructor(private userHandler: UserService)
   {
-
+    this.isLoggedIn = userHandler.isLoggedIn;
   }
 }
