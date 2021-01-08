@@ -1,14 +1,4 @@
-<mat-toolbar color="primary" class="navbar" >
-  
-    <div [style.color]="'#66FCF1'" class='logo'><a>myref.com</a></div>
-    <div [style.color]="'#66FCF1'" class="links">
-      <span *ngIf="isLoggedIn == false"><a [routerLink]="['/signup']">sign up</a></span>
-      <span *ngIf="isLoggedIn == false"><a [routerLink]="['/login']">login</a></span>
-      <span *ngIf="isLoggedIn == true"><a [routerLink]="['/landing']">dashboard</a></span>
-      <span *ngIf="isLoggedIn == true"><a [routerLink]="['/landing']">schedule</a></span>
-      <span *ngIf="isLoggedIn == true"><a [routerLink]="['/login']">log out</a></span>
-    </div>
-  </mat-toolbar>
+
 
 <div>
     <router-outlet></router-outlet>

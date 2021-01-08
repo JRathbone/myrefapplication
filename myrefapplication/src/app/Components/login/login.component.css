@@ -1,7 +1,7 @@
-:host {
+.container {
   display: flex;
   justify-content: center;
-  margin: 20vh 0px;
+  margin: 20vh 10vw;
   
 }
 
@@ -29,3 +29,67 @@ mat-card-content {
   justify-content: center
   
 }
+
+.navbar{
+  justify-content: space-between;
+}
+
+span{
+  padding-right: 10rem;
+  padding-left: 5rem;
+}
+.logo{
+  padding-left: 2rem;
+  font-size: 32px;
+}
+
+.material-icons{
+  display: none;
+}
+
+a[ng-reflect-router-link]
+{
+  color: white;
+  text-decoration: none;
+  color: #66fcf1;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+  .logo{
+    font-size: 24px;
+    margin-top: 4px;
+  }
+
+  span{
+    padding-right: 0rem;
+    padding-left: 2rem;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  
+  span{
+    padding-right: 1rem;
+    padding-left: 2rem;
+  }
+  .logo{
+    padding-left: 2rem;
+    font-size: 32px;
+  }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

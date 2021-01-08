@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { UserService } from 'src/backend/user.service';
+
 
 
 @Component({
@@ -7,12 +8,23 @@ import { UserService } from 'src/backend/user.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent  {
   title = 'myRef';
   
-  isLoggedIn;
+  isLoggedIn = false;
   constructor(private userHandler: UserService)
   {
-    this.isLoggedIn = userHandler.isLoggedIn;
+    
   }
+
+  logout()
+  {
+
+  }
+
+  
+
+
+  
+  
 }
