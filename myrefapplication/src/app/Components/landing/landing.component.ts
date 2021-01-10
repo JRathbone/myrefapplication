@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { BackendService } from 'src/app/backend.service';
+import { UserService } from 'src/backend/user.service';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class LandingComponent implements OnInit {
   city: string = "";
   state: string = "";
 
-  constructor(private backend: BackendService) 
+  constructor(private backend: BackendService, private userHandler: UserService) 
   { 
 
   }
@@ -48,6 +49,10 @@ export class LandingComponent implements OnInit {
     this.maxTemp = data.forecast.forecastday[0].day.maxtemp_f;
     this.minTemp = data.forecast.forecastday[0].day.mintemp_f;
   }
+
+  logout()
+  {
+    this.userHandler.logout()
+  }
 }
   
-//forecast.forecastday[0].day.maxtemp_f

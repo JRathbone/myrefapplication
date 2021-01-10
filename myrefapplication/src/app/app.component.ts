@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { UserService } from 'src/backend/user.service';
+
 
 
 
@@ -11,20 +11,10 @@ import { UserService } from 'src/backend/user.service';
 export class AppComponent  {
   title = 'myRef';
   
-  isLoggedIn = false;
-  constructor(private userHandler: UserService)
+  
+  constructor()
   {
     
   }
-
-  logout()
-  {
-
-  }
-
-  
-
-
-  
   
 }
