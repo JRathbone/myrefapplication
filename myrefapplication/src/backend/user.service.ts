@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth'
 import { Router } from '@angular/router';
+import { IUser } from "src/backend/user"
 
 
 @Injectable({
@@ -9,6 +10,8 @@ import { Router } from '@angular/router';
 export class UserService {
 
   isLoggedIn = false;
+  currentUser: IUser = null;
+
   constructor(public firebaseAuth: AngularFireAuth, private router: Router) { }
 
   async signin(email: string, password: string)
