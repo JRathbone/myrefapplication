@@ -11,11 +11,18 @@ import { AngularFireDatabase } from '@angular/fire/database';
 export class UserService {
 
   isLoggedIn = false;
-  currentUser: IUser = null;
+  currentUser: IUser;
+  ArrayOfUsers: IUser[] = [];
   database: AngularFireDatabase;
 
   constructor(public firebaseAuth: AngularFireAuth, private router: Router, private db: AngularFireDatabase) {
     this.database = db;
+
+    this.db.list<IUser>('/users').valueChanges().subscribe({
+      next: users => {
+        this.ArrayOfUsers = users
+      }
+    })
     
    }
 
@@ -25,8 +32,9 @@ export class UserService {
     .then(res=>{
         this.isLoggedIn = true;
         localStorage.setItem('user',JSON.stringify(res.user));
-        //this.currentUser = this.database.list('/users', ref => ref.orderByChild('UserUID').equalTo(res.user.uid))[0]
-        this.getUserInfo("sup");
+        
+        console.log(this.getUserInfo("asdf"));
+
         this.router.navigate(['/landing'])
     }).catch(_error =>{
         console.log(_error);
@@ -55,12 +63,8 @@ export class UserService {
     this.router.navigate(['/login'])
   }
 
-  async getUserInfo(UserUID: string){
-    await this.db.list('/users').valueChanges().subscribe({
-      next: users => {
-        users.filter(user => console.log(user));
-      }
-    })
+  getUserInfo(UserUID: string): IUser {
+      return this.ArrayOfUsers.filter(user => user.UserUID == UserUID)[0]
   }
 
 }
