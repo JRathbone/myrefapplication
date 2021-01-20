@@ -29,8 +29,7 @@ export class SignupComponent implements OnInit {
     }
     else
     {
-      this.userHandler.signup(this.signUpForm.value.email,this.signUpForm.value.password);
-      
+      this.userHandler.signup(this.signUpForm.value.fullName, this.signUpForm.value.email,this.signUpForm.value.password);
     }
   }
   

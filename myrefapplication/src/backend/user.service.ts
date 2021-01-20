@@ -17,7 +17,6 @@ export class UserService {
 
   constructor(public firebaseAuth: AngularFireAuth, private router: Router, private db: AngularFireDatabase) {
     this.database = db;
-
     this.db.list<IUser>('/users').valueChanges().subscribe({
       next: users => {
         this.ArrayOfUsers = users
@@ -26,36 +25,38 @@ export class UserService {
     
    }
 
+
+  // user signs into account.
   async signin(email: string, password: string)
   {
     await this.firebaseAuth.signInWithEmailAndPassword(email,password)
     .then(res=>{
         this.isLoggedIn = true;
         localStorage.setItem('user',JSON.stringify(res.user));
-        
-        console.log(this.getUserInfo("asdf"));
-
+        this.currentUser = this.getUser("asdf");
         this.router.navigate(['/landing'])
     }).catch(_error =>{
-        console.log(_error);
         this.router.navigate(['/login'])
     })
   }
 
-  async signup(email: string, password: string)
+
+  //new user is created if there are no errors
+  async signup(name: string, email: string, password: string)
   {
     await this.firebaseAuth.createUserWithEmailAndPassword(email,password)
     .then(res=>{
       this.isLoggedIn = true;
       localStorage.setItem('user',JSON.stringify(res.user));
-      
+      this.createNewUser(res.user.uid,name);
       this.router.navigate(['/landing'])
     }).catch(_error =>{
       console.log(_error);
       this.router.navigate(['/signup'])
-  })
+  }) 
   }
 
+  // user is logged out 
   logout()
   { 
     this.firebaseAuth.signOut();
@@ -63,8 +64,33 @@ export class UserService {
     this.router.navigate(['/login'])
   }
 
-  getUserInfo(UserUID: string): IUser {
+  //user is gathered by their specific UID
+  getUser(UserUID: string): IUser {
       return this.ArrayOfUsers.filter(user => user.UserUID == UserUID)[0]
   }
 
+
+  //new user is created
+  createNewUser(userUID: string, name: string)
+  {
+    const databaseReference = this.db.database.ref("/users");
+
+    const newUser = {
+      UserUID: userUID,
+      careerGamesCompleted: 0,
+      displayName: name,
+      yearToDateEarnings: 0.00,
+      yearlyGamesCompleted: 0,
+      yearlyGamesLeft: 0
+    }
+
+    databaseReference.push(newUser);
+  }
+
+  getLoginState(): boolean
+  {
+    return this.isLoggedIn;
+  }
+
+  
 }
