@@ -25,7 +25,7 @@ export class SignupComponent implements OnInit {
   submit() : void{
     if(this.signUpForm.invalid)
     {
-      
+       
     }
     else
     {
