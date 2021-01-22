@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { IGame } from 'src/backend/game';
 import { scheduleService } from 'src/backend/schedule.service';
+import { UserService } from 'src/backend/user.service';
 
 @Component({
   selector: 'upcominggames',
@@ -15,11 +16,13 @@ export class UpcominggamesComponent implements OnInit {
   upcomingGames: IGame[] = [];
   selectedGame: IGame;
   
-  constructor(private scheduleService: scheduleService, public dialog: MatDialog) { 
+  constructor(private scheduleService: scheduleService, public dialog: MatDialog, private userHandler: UserService) { 
     
     scheduleService.getSchedule().subscribe({
       next: games => {
-        this.upcomingGames = games.filter(game => game.hasBeenApprovedOrDeclined == true && new Date(game.gameDate) > new Date);
+        this.upcomingGames = games.filter(game => game.hasBeenApprovedOrDeclined == true 
+          && new Date(game.gameDate) > new Date 
+          && (game.centerReferee == userHandler.currentUser.displayName || game.assistantReferee1 == userHandler.currentUser.displayName || game.assistantReferee2 == userHandler.currentUser.displayName));
       }
     })
   }

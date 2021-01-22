@@ -17,6 +17,7 @@ export class AssignedGamesComponent implements OnInit {
   
     scheduleService.getSchedule().subscribe({
       next: games => {
+        console.log(games);
         this.assignedGames = games.filter(game => game.hasBeenApprovedOrDeclined == false);
       }
     })

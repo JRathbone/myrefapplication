@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IUser } from 'src/backend/user';
+import { UserService } from 'src/backend/user.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
   today: string = null;
   tempF: Number = 0;
   condition: string = "";
@@ -18,7 +19,12 @@ export class DashboardComponent implements OnInit {
   minTemp: number = 0;
   city: string = "";
   state: string = "";
-  constructor() { }
+  currentUser: IUser;
+  _userhandler: UserService;
+
+  constructor(private userHandler: UserService) { 
+    this._userhandler = userHandler;
+  }
 
   getTodaysDate(): string{
     return this.today;
@@ -27,6 +33,9 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {  
     this.today = new Date().toLocaleDateString()
     //this.backend.get().subscribe((data) => this.assignValues(data));
+    this.currentUser = this._userhandler.currentUser;
   }
+
+
 
 }

@@ -22,6 +22,7 @@ export class LandingComponent implements OnInit {
   city: string = "";
   state: string = "";
 
+
   constructor(private backend: BackendService, private userHandler: UserService) 
   { 
 

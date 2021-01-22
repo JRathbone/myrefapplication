@@ -35,7 +35,7 @@
               </mat-grid-tile>
               <mat-grid-tile colspan="2" rowspan="1" class="weatherTile">
                 <h6>Humidity: <br>2%</h6>
-              </mat-grid-tile>
+              </mat-grid-tile> 
             </mat-grid-list>
         </mat-grid-tile>
         <mat-grid-tile colspan="6" rowspan="2" class="profile" style="background-color: #1F2833;"> 
@@ -46,24 +46,24 @@
               </mat-grid-tile>
   
               <mat-grid-tile colspan="2" rowspan="1" class="profileList">
-                 <p class="gamesCompleted">Career Games Completed: <span class="number">98</span></p>
+                 <p class="gamesCompleted">Career Games Completed: <span class="number">{{currentUser.careerGamesCompleted}}</span></p>
               </mat-grid-tile>
   
               <mat-grid-tile colspan="2" rowspan="3" class="profileList">
-                <h2 class="name">Justin Rathbone</h2>
+                <h2 class="name">{{currentUser.displayName}}</h2>
                 <p class="certLevel"><i>2020 Certification Level:</i> Grade 8</p>
               </mat-grid-tile>
               
               <mat-grid-tile colspan="1" rowspan="2" class="stats">
-                <h3>YTD Earnings: <br><h3 class="number">$134.54</h3></h3>
+                <h3>YTD Earnings: <br><h3 class="number">${{currentUser.yearToDateEarnings}}</h3></h3>
               </mat-grid-tile>
   
               <mat-grid-tile colspan="1" rowspan="2" class="stats">
-                <h3>2020 Games Completed: <br><h3 class="number">24</h3></h3>
+                <h3>2020 Games Completed: <br><h3 class="number">{{currentUser.yearlyGamesCompleted}}</h3></h3>
               </mat-grid-tile>
   
               <mat-grid-tile colspan="1" rowspan="2" class="stats">
-                <h3>2020 Games Left: <br><h3 class="number">10</h3></h3>
+                <h3>2020 Games Left: <br><h3 class="number">{{currentUser.yearlyGamesLeft}}</h3></h3>
               </mat-grid-tile>
             </mat-grid-list>
         </mat-grid-tile>

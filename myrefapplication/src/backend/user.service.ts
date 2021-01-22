@@ -33,13 +33,12 @@ export class UserService {
     .then(res=>{
         this.isLoggedIn = true;
         localStorage.setItem('user',JSON.stringify(res.user));
-        this.currentUser = this.getUser("asdf");
+        this.currentUser = this.getUser(res.user.uid);
         this.router.navigate(['/landing'])
     }).catch(_error =>{
         this.router.navigate(['/login'])
     })
   }
-
 
   //new user is created if there are no errors
   async signup(name: string, email: string, password: string)
@@ -66,9 +65,8 @@ export class UserService {
 
   //user is gathered by their specific UID
   getUser(UserUID: string): IUser {
-      return this.ArrayOfUsers.filter(user => user.UserUID == UserUID)[0]
+    return this.ArrayOfUsers.filter(user => user.UserUID == UserUID)[0]
   }
-
 
   //new user is created
   createNewUser(userUID: string, name: string)

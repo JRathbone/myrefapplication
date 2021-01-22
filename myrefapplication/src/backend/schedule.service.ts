@@ -13,7 +13,7 @@ export class scheduleService
 
     constructor(db: AngularFireDatabase){
         this.database = db;
-        this.fullSchedule = this.database.list<IGame>('/').valueChanges();  
+        this.fullSchedule = this.database.list<IGame>('/games').valueChanges();  
     }
     
     getSchedule(): Observable<IGame[]>
