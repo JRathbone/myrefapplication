@@ -18,14 +18,9 @@
             <p style="text-align: center; margin-left: 3px; margin-top: 2vh;">Center: <span style="color: #45A29E;">$25</span></p>
           </div>
         </mat-grid-tile>
-        <mat-grid-tile colspan="1" rowspan="1">
-          <button mat-raised-button color="basic" >
-            Accept
-          </button>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="1" rowspan="1">
-          <button mat-raised-button color="warn" >
-            Decline
+        <mat-grid-tile colspan="2" rowspan="1">
+          <button mat-raised-button color="basic" (click)="openDialog(game.gameNumber)">
+            More Info
           </button>
         </mat-grid-tile>
       </mat-grid-list>

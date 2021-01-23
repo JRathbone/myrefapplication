@@ -1,0 +1,23 @@
+-landing page
+    - fix game object to have AR1/AR2 hasBeenApprovedOrDeclined -1/24
+    - connect recentgames to database and validate -1/24
+    - connect assignedgames to database and validate -1/24
+    - design dialog component -1/30
+    - update user statistics when game is assigned/completed.
+    - add "no games here" when games array is empty. -1/30
+
+- design schedule page
+    - sort games by date/age group/games that are open
+    - assign/remove self from games
+    - admin: Create/update/delete/assign games 
+
+
+-database
+    - add isAdmin value to IUser
+    - create anonymous/guest user
+
+-login/signup
+    - add error message when invalid login/signup
+    - add background to page
+    - add anonymous/guest login
+
