@@ -18,6 +18,10 @@ export interface IGame {
     notes: string,
     numYellowCards: number,
     numRedCards: number,
-    hasBeenApprovedOrDeclined: boolean,
-    hasBeenCompleted: boolean
+    centerHasApprovedOrDeclined: boolean,
+    hasBeenCompleted: boolean,
+    AR1hasApprovedOrDeclined: boolean,
+    AR2hasApprovedOrDeclined: boolean,
+    ARGamePay: number,
+
 }

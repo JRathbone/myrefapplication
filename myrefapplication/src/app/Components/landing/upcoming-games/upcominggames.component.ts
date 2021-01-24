@@ -20,9 +20,24 @@ export class UpcominggamesComponent implements OnInit {
     
     scheduleService.getSchedule().subscribe({
       next: games => {
-        this.upcomingGames = games.filter(game => game.hasBeenApprovedOrDeclined == true 
-          && new Date(game.gameDate) > new Date 
-          && (game.centerReferee == userHandler.currentUser.displayName || game.assistantReferee1 == userHandler.currentUser.displayName || game.assistantReferee2 == userHandler.currentUser.displayName));
+        //this.upcomingGames = games.filter(game => game.hasBeenApprovedOrDeclined == true 
+        //  && new Date(game.gameDate) > new Date 
+        //  && (game.centerReferee == userHandler.currentUser.displayName || game.assistantReferee1 == userHandler.currentUser.displayName || game.assistantReferee2 == userHandler.currentUser.displayName));
+
+        games.forEach(game => {
+          if(game.centerHasApprovedOrDeclined == true && game.centerReferee == userHandler.currentUser.displayName && new Date(game.gameDate) > new Date )
+          {
+            this.upcomingGames.push(game);
+          }
+          else if(game.AR1hasApprovedOrDeclined == true && game.assistantReferee1 == userHandler.currentUser.displayName && new Date(game.gameDate) > new Date )
+          {
+            this.upcomingGames.push(game);
+          }
+          else if(game.AR2hasApprovedOrDeclined == true && game.assistantReferee2 == userHandler.currentUser.displayName && new Date(game.gameDate) > new Date )
+          {
+            this.upcomingGames.push(game);
+          }
+        });
       }
     })
   }
