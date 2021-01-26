@@ -24,6 +24,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SignupComponent } from './Components/signup/signup.component';
+import {AssignedGamesDialog} from './Components/landing/assigned-games/assigned-games.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SignupComponent } from './Components/signup/signup.component';
     RecentgamesComponent,
     LoginComponent,
     DashboardComponent,
-    SignupComponent
+    SignupComponent,
+    AssignedGamesDialog
   ],
   imports: [
     BrowserModule,

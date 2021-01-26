@@ -6,6 +6,7 @@ import { scheduleService } from 'src/backend/schedule.service';
 import { UserService } from 'src/backend/user.service';
 
 
+
 @Component({
   selector: 'assigned-games',
   templateUrl: './assigned-games.component.html',
@@ -53,8 +54,10 @@ export class AssignedGamesComponent implements OnInit {
   openDialog(gamenumber: Number): void
   {
     this.selectedGame = this.assignedGames.filter(games => games.gameNumber == gamenumber)[0]
-    const dialogRef = this.dialog.open(DialogContentExampleDialog, {
-      data: this.selectedGame
+    const dialogRef = this.dialog.open(AssignedGamesDialog, {
+      data: this.selectedGame,
+      height: 'auto',
+      width: '45vw'
    });
     
   }
@@ -64,9 +67,9 @@ export class AssignedGamesComponent implements OnInit {
   selector: 'assigned-games-dialog',
   templateUrl: 'assigned-games-dialog.html',
 })
-export class DialogContentExampleDialog {
+export class AssignedGamesDialog {
   private selectedGame: IGame;
-  constructor(public dialogRef: MatDialogRef<DialogContentExampleDialog>,@Inject(MAT_DIALOG_DATA) public data: IGame) {
+  constructor(public dialogRef: MatDialogRef<AssignedGamesDialog>,@Inject(MAT_DIALOG_DATA) public data: IGame) {
     
   }
 

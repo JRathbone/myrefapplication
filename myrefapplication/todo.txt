@@ -1,7 +1,4 @@
 -landing page
-    - fix game object to have AR1/AR2 hasBeenApprovedOrDeclined -1/24
-    - connect recentgames to database and validate -1/24
-    - connect assignedgames to database and validate -1/24
     - design dialog component -1/30
     - update user statistics when game is assigned/completed.
     - add "no games here" when games array is empty. -1/30
