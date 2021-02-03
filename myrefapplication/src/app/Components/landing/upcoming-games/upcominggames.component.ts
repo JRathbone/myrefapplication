@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { IGame } from 'src/backend/game';
 import { scheduleService } from 'src/backend/schedule.service';
+import { IUser } from 'src/backend/user';
 import { UserService } from 'src/backend/user.service';
 
 @Component({
@@ -15,9 +16,10 @@ export class UpcominggamesComponent implements OnInit {
   
   upcomingGames: IGame[] = [];
   selectedGame: IGame;
+  currentUser: IUser;
   
   constructor(private scheduleService: scheduleService, public dialog: MatDialog, private userHandler: UserService) { 
-    
+    this.currentUser = JSON.parse(localStorage.getItem('user')) as IUser
     scheduleService.getSchedule().subscribe({
       next: games => {
         //this.upcomingGames = games.filter(game => game.hasBeenApprovedOrDeclined == true 
@@ -25,15 +27,15 @@ export class UpcominggamesComponent implements OnInit {
         //  && (game.centerReferee == userHandler.currentUser.displayName || game.assistantReferee1 == userHandler.currentUser.displayName || game.assistantReferee2 == userHandler.currentUser.displayName));
 
         games.forEach(game => {
-          if(game.centerHasApprovedOrDeclined == true && game.centerReferee == userHandler.currentUser.displayName && new Date(game.gameDate) > new Date )
+          if(game.centerHasApprovedOrDeclined == true && game.centerReferee == this.currentUser.displayName && new Date(game.gameDate) > new Date )
           {
             this.upcomingGames.push(game);
           }
-          else if(game.AR1hasApprovedOrDeclined == true && game.assistantReferee1 == userHandler.currentUser.displayName && new Date(game.gameDate) > new Date )
+          else if(game.AR1hasApprovedOrDeclined == true && game.assistantReferee1 == this.currentUser.displayName && new Date(game.gameDate) > new Date )
           {
             this.upcomingGames.push(game);
           }
-          else if(game.AR2hasApprovedOrDeclined == true && game.assistantReferee2 == userHandler.currentUser.displayName && new Date(game.gameDate) > new Date )
+          else if(game.AR2hasApprovedOrDeclined == true && game.assistantReferee2 == this.currentUser.displayName && new Date(game.gameDate) > new Date )
           {
             this.upcomingGames.push(game);
           }

@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private userHandler: UserService) { 
     this._userhandler = userHandler;
+    
   }
 
   getTodaysDate(): string{
@@ -33,7 +34,9 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {  
     this.today = new Date().toLocaleDateString()
     //this.backend.get().subscribe((data) => this.assignValues(data));
-    this.currentUser = this._userhandler.currentUser;
+    
+    this.currentUser = JSON.parse(localStorage.getItem('user')) as IUser
+    
   }
 
 

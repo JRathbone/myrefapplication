@@ -22,10 +22,11 @@ export class LandingComponent implements OnInit {
   city: string = "";
   state: string = "";
 
+  
 
-  constructor(private backend: BackendService, private userHandler: UserService) 
+  constructor(private backend: BackendService, public userHandler: UserService) 
   { 
-
+    
   }
 
   getTodaysDate(): string{
@@ -35,6 +36,7 @@ export class LandingComponent implements OnInit {
   ngOnInit(): void {  
     this.today = new Date().toLocaleDateString()
     //this.backend.get().subscribe((data) => this.assignValues(data));
+    
   }
 
   assignValues(data)

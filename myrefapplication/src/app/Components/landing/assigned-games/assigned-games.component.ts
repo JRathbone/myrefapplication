@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { IGame } from 'src/backend/game';
 import { scheduleService } from 'src/backend/schedule.service';
+import { IUser } from 'src/backend/user';
 import { UserService } from 'src/backend/user.service';
 
 
@@ -17,28 +18,22 @@ export class AssignedGamesComponent implements OnInit {
   
   assignedGames: IGame[] = [];
   selectedGame: IGame;
+  currentUser: IUser;
 
   constructor(private scheduleService: scheduleService,public dialog: MatDialog, private userHandler: UserService) { 
-  
+    this.currentUser = JSON.parse(localStorage.getItem('user')) as IUser
     scheduleService.getSchedule().subscribe({
       next: games => {
-        
-        //this.assignedGames = games.filter(game => 
-         // game.hasBeenApprovedOrDeclined == false
-        //  && (game.centerReferee == userHandler.currentUser.displayName 
-        //  || game.assistantReferee1 == userHandler.currentUser.displayName 
-        //  || game.assistantReferee2 == userHandler.currentUser.displayName));
-
         games.forEach(game => {
-          if(game.centerHasApprovedOrDeclined == false && game.centerReferee == userHandler.currentUser.displayName)
+          if(game.centerHasApprovedOrDeclined == false && game.centerReferee == this.currentUser.displayName)
           {
             this.assignedGames.push(game);
           }
-          else if(game.AR1hasApprovedOrDeclined == false && game.assistantReferee1 == userHandler.currentUser.displayName)
+          else if(game.AR1hasApprovedOrDeclined == false && game.assistantReferee1 == this.currentUser.displayName)
           {
             this.assignedGames.push(game);
           }
-          else if(game.AR2hasApprovedOrDeclined == false && game.assistantReferee2 == userHandler.currentUser.displayName)
+          else if(game.AR2hasApprovedOrDeclined == false && game.assistantReferee2 == this.currentUser.displayName)
           {
             this.assignedGames.push(game);
           }
@@ -66,6 +61,7 @@ export class AssignedGamesComponent implements OnInit {
 @Component({
   selector: 'assigned-games-dialog',
   templateUrl: 'assigned-games-dialog.html',
+  styleUrls: ['./assigned-games-dialog.css']
 })
 export class AssignedGamesDialog {
   private selectedGame: IGame;

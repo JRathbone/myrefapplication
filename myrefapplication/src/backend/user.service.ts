@@ -1,16 +1,16 @@
-import {Injectable} from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth'
 import { Router } from '@angular/router';
 import { IUser } from "src/backend/user"
 import { AngularFireDatabase } from '@angular/fire/database';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class UserService implements OnInit{
 
-  isLoggedIn = false;
   currentUser: IUser;
   ArrayOfUsers: IUser[] = [];
   database: AngularFireDatabase;
@@ -23,7 +23,12 @@ export class UserService {
       }
     })
     
+    
    }
+
+  ngOnInit(): void {
+    
+  }
 
 
   // user signs into account.
@@ -31,9 +36,8 @@ export class UserService {
   {
     await this.firebaseAuth.signInWithEmailAndPassword(email,password)
     .then(res=>{
-        this.isLoggedIn = true;
-        localStorage.setItem('user',JSON.stringify(res.user));
         this.currentUser = this.getUser(res.user.uid);
+        localStorage.setItem('user',JSON.stringify(this.currentUser));
         this.router.navigate(['/landing'])
     }).catch(_error =>{
         this.router.navigate(['/login'])
@@ -45,7 +49,6 @@ export class UserService {
   {
     await this.firebaseAuth.createUserWithEmailAndPassword(email,password)
     .then(res=>{
-      this.isLoggedIn = true;
       localStorage.setItem('user',JSON.stringify(res.user));
       this.createNewUser(res.user.uid,name);
       this.router.navigate(['/landing'])
@@ -65,6 +68,7 @@ export class UserService {
 
   //user is gathered by their specific UID
   getUser(UserUID: string): IUser {
+    
     return this.ArrayOfUsers.filter(user => user.UserUID == UserUID)[0]
   }
 
@@ -85,10 +89,12 @@ export class UserService {
     databaseReference.push(newUser);
   }
 
-  getLoginState(): boolean
-  {
-    return this.isLoggedIn;
-  }
+  
+
+  
+
+ 
+  
 
   
 }

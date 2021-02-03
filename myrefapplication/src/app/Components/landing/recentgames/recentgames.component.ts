@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IGame } from 'src/backend/game';
 import { scheduleService } from 'src/backend/schedule.service';
+import { IUser } from 'src/backend/user';
 import { UserService } from 'src/backend/user.service';
 
 @Component({
@@ -12,9 +13,12 @@ export class RecentgamesComponent implements OnInit {
 
   
   recentGames: IGame[] = [];
+  currentUser: IUser;
 
   constructor(private scheduleService: scheduleService, private userHandler: UserService) { 
+    this.currentUser = JSON.parse(localStorage.getItem('user')) as IUser
     scheduleService.getSchedule().subscribe({
+      
       next: games => {
         //this.recentGames = games.filter(game => game.hasBeenApprovedOrDeclined == true && new Date(game.gameDate) < new Date);
 
