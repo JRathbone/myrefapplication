@@ -52,7 +52,7 @@ export class AssignedGamesComponent implements OnInit {
     const dialogRef = this.dialog.open(AssignedGamesDialog, {
       data: this.selectedGame,
       height: 'auto',
-      width: '45vw'
+      width: '50vw'
    });
     
   }

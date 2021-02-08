@@ -20,8 +20,6 @@ export class RecentgamesComponent implements OnInit {
     scheduleService.getSchedule().subscribe({
       
       next: games => {
-        //this.recentGames = games.filter(game => game.hasBeenApprovedOrDeclined == true && new Date(game.gameDate) < new Date);
-
         games.forEach(game => {
           if(game.centerHasApprovedOrDeclined && game.AR1hasApprovedOrDeclined && game.AR2hasApprovedOrDeclined && new Date(game.gameDate) < new Date)
           {

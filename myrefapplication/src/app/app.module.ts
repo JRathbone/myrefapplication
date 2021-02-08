@@ -25,6 +25,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SignupComponent } from './Components/signup/signup.component';
 import {AssignedGamesDialog} from './Components/landing/assigned-games/assigned-games.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import {AssignedGamesDialog} from './Components/landing/assigned-games/assigned-
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressBarModule
     
   ],
   providers: [],
