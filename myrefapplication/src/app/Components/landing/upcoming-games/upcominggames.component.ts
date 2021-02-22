@@ -20,12 +20,11 @@ export class UpcominggamesComponent implements OnInit {
   
   constructor(private scheduleService: scheduleService, public dialog: MatDialog, private userHandler: UserService) { 
     this.currentUser = JSON.parse(localStorage.getItem('user')) as IUser
-    scheduleService.getSchedule().subscribe({
+    
+    if(this.currentUser.displayName != "John Doe")
+    {
+      scheduleService.getSchedule().subscribe({
       next: games => {
-        //this.upcomingGames = games.filter(game => game.hasBeenApprovedOrDeclined == true 
-        //  && new Date(game.gameDate) > new Date 
-        //  && (game.centerReferee == userHandler.currentUser.displayName || game.assistantReferee1 == userHandler.currentUser.displayName || game.assistantReferee2 == userHandler.currentUser.displayName));
-
         games.forEach(game => {
           if(game.centerHasApprovedOrDeclined == true && game.centerReferee == this.currentUser.displayName && new Date(game.gameDate) > new Date )
           {
@@ -42,6 +41,28 @@ export class UpcominggamesComponent implements OnInit {
         });
       }
     })
+    } else {
+      scheduleService.getAnonymousScedule().subscribe({
+        next: games => {
+          games.forEach(game => {
+            if(game.centerHasApprovedOrDeclined == true && game.centerReferee == this.currentUser.displayName && new Date(game.gameDate) > new Date )
+            {
+              this.upcomingGames.push(game);
+            }
+            else if(game.AR1hasApprovedOrDeclined == true && game.assistantReferee1 == this.currentUser.displayName && new Date(game.gameDate) > new Date )
+            {
+              this.upcomingGames.push(game);
+            }
+            else if(game.AR2hasApprovedOrDeclined == true && game.assistantReferee2 == this.currentUser.displayName && new Date(game.gameDate) > new Date )
+            {
+              this.upcomingGames.push(game);
+            }
+          });
+        }
+      })
+    }
+
+    
   }
 
   ngOnInit(): void {

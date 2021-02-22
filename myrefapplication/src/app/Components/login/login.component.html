@@ -1,13 +1,10 @@
 <mat-toolbar color="primary" class="navbar" >
-  
   <div [style.color]="'#66FCF1'" class='logo'><a>myref.com</a></div>
   <div [style.color]="'#66FCF1'" class="links">
     <span><a [routerLink]="['/signup']">sign up</a></span>
     <span><a [routerLink]="['/login']">login</a></span>
-
   </div>
 </mat-toolbar>
-
 <div class="container">
   <mat-card>
       <mat-card-title>Login</mat-card-title>
@@ -18,19 +15,15 @@
           <input type="email" matInput placeholder="Email" formControlName="email" style="color: black;" autofocus>
         </mat-form-field>
       </p>
-
       <p>
         <mat-form-field appearance="standard">
           <input type="password" matInput placeholder="Password" formControlName="password" style="color: black;">
         </mat-form-field>
       </p>
-
-      
-
       <div class="button">
         <button type="button"  (click)="submit()" mat-raised-button color="accent" >Login</button>
+        <button type="button"  (click)="loginAnonymously()" mat-raised-button color="primary" style="margin-left: 10px">Anonymous Login</button>
       </div>
-
     </form>
     </mat-card-content>
   </mat-card>

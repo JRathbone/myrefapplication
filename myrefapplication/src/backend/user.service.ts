@@ -49,8 +49,9 @@ export class UserService implements OnInit{
   {
     await this.firebaseAuth.createUserWithEmailAndPassword(email,password)
     .then(res=>{
-      localStorage.setItem('user',JSON.stringify(res.user));
       this.createNewUser(res.user.uid,name);
+      this.currentUser = this.getUser(res.user.uid);
+      localStorage.setItem('user',JSON.stringify(this.currentUser));
       this.router.navigate(['/landing'])
     }).catch(_error =>{
       console.log(_error);
@@ -85,6 +86,8 @@ export class UserService implements OnInit{
       yearlyGamesCompleted: 0,
       yearlyGamesLeft: 0
     }
+
+    this.ArrayOfUsers.push(newUser);
 
     databaseReference.push(newUser);
   }

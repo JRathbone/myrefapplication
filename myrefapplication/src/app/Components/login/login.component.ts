@@ -34,4 +34,8 @@ export class LoginComponent implements OnInit {
       console.log("invalid form");
     }
   }
+
+  loginAnonymously() : void{
+    this.userHandler.signin("anonymous@mail.com","anonymous");
+  }
 }
