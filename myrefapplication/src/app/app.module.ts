@@ -10,7 +10,7 @@ import { LandingComponent } from '../app/Components/landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AssignedGamesComponent } from './Components/landing/assigned-games/assigned-games.component';
 import { MatButtonModule} from '@angular/material/button';
-import { UpcominggamesComponent } from './Components/landing/upcoming-games/upcominggames.component';
+import { UpcominggamesComponent, UpcomingGamesDialog } from './Components/landing/upcoming-games/upcominggames.component';
 import { RecentgamesComponent } from './Components/landing/recentgames/recentgames.component';
 import { RouterModule } from '@angular/router';
 import { AngularFireModule } from '@angular/fire';
@@ -32,12 +32,13 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     AppComponent,
     LandingComponent,
     AssignedGamesComponent,
-    UpcominggamesComponent,
+    UpcominggamesComponent, 
     RecentgamesComponent,
     LoginComponent,
     DashboardComponent,
     SignupComponent,
-    AssignedGamesDialog
+    AssignedGamesDialog,
+    UpcomingGamesDialog
   ],
   imports: [
     BrowserModule,

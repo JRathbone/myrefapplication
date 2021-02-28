@@ -38,6 +38,7 @@ export class UserService implements OnInit{
     .then(res=>{
         this.currentUser = this.getUser(res.user.uid);
         localStorage.setItem('user',JSON.stringify(this.currentUser));
+        
         this.router.navigate(['/landing'])
     }).catch(_error =>{
         this.router.navigate(['/login'])
@@ -69,7 +70,6 @@ export class UserService implements OnInit{
 
   //user is gathered by their specific UID
   getUser(UserUID: string): IUser {
-    
     return this.ArrayOfUsers.filter(user => user.UserUID == UserUID)[0]
   }
 

@@ -21,25 +21,55 @@ export class AssignedGamesComponent implements OnInit {
   currentUser: IUser;
 
   constructor(private scheduleService: scheduleService,public dialog: MatDialog, private userHandler: UserService) { 
+    
     this.currentUser = JSON.parse(localStorage.getItem('user')) as IUser
-    scheduleService.getSchedule().subscribe({
-      next: games => {
-        games.forEach(game => {
-          if(game.centerHasApprovedOrDeclined == false && game.centerReferee == this.currentUser.displayName)
-          {
-            this.assignedGames.push(game);
-          }
-          else if(game.AR1hasApprovedOrDeclined == false && game.assistantReferee1 == this.currentUser.displayName)
-          {
-            this.assignedGames.push(game);
-          }
-          else if(game.AR2hasApprovedOrDeclined == false && game.assistantReferee2 == this.currentUser.displayName)
-          {
-            this.assignedGames.push(game);
-          }
-        });
-      }
-    })
+
+    if(this.currentUser.displayName != "John Doe")
+    {
+      scheduleService.getSchedule().subscribe({
+        next: games => {
+          games.forEach(game => {
+            if(game.centerHasApprovedOrDeclined == false && game.centerReferee == this.currentUser.displayName)
+            {
+              this.assignedGames.push(game);
+            }
+            else if(game.AR1hasApprovedOrDeclined == false && game.assistantReferee1 == this.currentUser.displayName)
+            {
+              this.assignedGames.push(game);
+            }
+            else if(game.AR2hasApprovedOrDeclined == false && game.assistantReferee2 == this.currentUser.displayName)
+            {
+              this.assignedGames.push(game);
+            }
+          });
+        }
+      })
+
+    } 
+    else 
+    {
+      scheduleService.getAnonymousScedule().subscribe({
+        next: games => {
+          games.forEach(game => {
+            if(game.centerHasApprovedOrDeclined == false && game.centerReferee == this.currentUser.displayName)
+            {
+              this.assignedGames.push(game);
+            }
+            else if(game.AR1hasApprovedOrDeclined == false && game.assistantReferee1 == this.currentUser.displayName)
+            {
+              this.assignedGames.push(game);
+            }
+            else if(game.AR2hasApprovedOrDeclined == false && game.assistantReferee2 == this.currentUser.displayName)
+            {
+              this.assignedGames.push(game);
+            }
+          });
+        }
+      })
+    }
+
+
+
   }
 
   ngOnInit(): void {

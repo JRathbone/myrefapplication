@@ -2,7 +2,7 @@
   "hosting": [
     {
       "target": "myrefapplication",
-      "public": "myrefapplication",
+      "public": "dist/myrefapplication",
       "ignore": [
         "**/.*"
       ],

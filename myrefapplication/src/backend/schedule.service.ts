@@ -30,6 +30,7 @@ export class scheduleService
 
     getAnonymousScedule(): Observable<IGame[]>
     {
+        
         return this.anonymousSchedule;
     }
 

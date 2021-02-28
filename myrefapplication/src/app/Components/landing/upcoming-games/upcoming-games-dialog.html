@@ -1,5 +1,50 @@
-
-<div mat-dialog-content>
-  <p>{{data.gameNumber}}</p>
-</div> 
-
+<mat-grid-list cols="3" rowHeight="3.25:1" >
+      <mat-grid-tile colspan="3" rowspan=".5">
+          <h1 style="color: #66FCF1; font-size: 64px;">myref</h1>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="3" rowspan=".5" class="topRowContainer">
+          <div style="color: #45A29E">Center Referee: <br>Justin Rathbone <br><br>$25</div>
+          <div>Assistant Referee 1: <br>Ryan Etheridge <br><br>$20</div>
+          <div>Assistant Referee 2: <br>Harrison Martindale <br><br>$20</div>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="3" rowspan="3">
+          <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Home Team: <br> <span style="font-weight: normal;">Vikings FC</span></th>
+                  <th>Away Team: <br> <span style="font-weight: normal;">Blair Bears</span></th>
+                  <th><br>Location & Field: <br> <span style="font-weight: normal;">Spirit Park - Lincoln, NE<br>#2</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Score</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td><span style="font-weight: bold;">Game Date: </span><br> January 23, 2021 - 2:30pm</td>
+                </tr>
+                <tr>
+                  <td>Yellow Cards</td>
+                  <td>3</td>
+                  <td>1</td>
+                  <td><span style="font-weight: bold;">Game Length: </span><br> 80 min</td>
+                </tr>
+                <tr>
+                  <td>Red Cards</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><span style="font-weight: bold;">Age Group: </span><br> U14 - Boys</td>
+                </tr>
+              </tbody>
+              </table>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan=".5">
+          <button mat-raised-button style="color: green;">Accepted</button>
+          <button mat-flat-button style="color: gray">Declined</button>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan=".5"></mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan=".5">
+          <button mat-raised-button color="accent">Submit Scores</button>
+      </mat-grid-tile>
+  </mat-grid-list>

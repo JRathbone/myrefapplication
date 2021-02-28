@@ -26,6 +26,7 @@ export class UpcominggamesComponent implements OnInit {
       scheduleService.getSchedule().subscribe({
       next: games => {
         games.forEach(game => {
+          
           if(game.centerHasApprovedOrDeclined == true && game.centerReferee == this.currentUser.displayName && new Date(game.gameDate) > new Date )
           {
             this.upcomingGames.push(game);
@@ -45,6 +46,7 @@ export class UpcominggamesComponent implements OnInit {
       scheduleService.getAnonymousScedule().subscribe({
         next: games => {
           games.forEach(game => {
+            console.log(game);
             if(game.centerHasApprovedOrDeclined == true && game.centerReferee == this.currentUser.displayName && new Date(game.gameDate) > new Date )
             {
               this.upcomingGames.push(game);
@@ -73,8 +75,10 @@ export class UpcominggamesComponent implements OnInit {
   openDialog(gamenumber: Number): void
   {
     this.selectedGame = this.upcomingGames.filter(games => games.gameNumber == gamenumber)[0]
-    const dialogRef = this.dialog.open(DialogContentExampleDialog, {
-      data: this.selectedGame
+    const dialogRef = this.dialog.open(UpcomingGamesDialog, {
+      data: this.selectedGame,
+      height: 'auto',
+      width: '50vw'
    });
     
   }
@@ -84,10 +88,11 @@ export class UpcominggamesComponent implements OnInit {
 @Component({
   selector: 'upcoming-games-dialog',
   templateUrl: 'upcoming-games-dialog.html',
+  styleUrls: ['./upcoming-games-dialog.css']
 })
-export class DialogContentExampleDialog {
+export class UpcomingGamesDialog {
   private selectedGame: IGame;
-  constructor(public dialogRef: MatDialogRef<DialogContentExampleDialog>,@Inject(MAT_DIALOG_DATA) public data: IGame) {
+  constructor(public dialogRef: MatDialogRef<UpcomingGamesDialog>,@Inject(MAT_DIALOG_DATA) public data: IGame) {
     
   }
 

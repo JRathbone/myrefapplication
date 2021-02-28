@@ -17,20 +17,41 @@ export class RecentgamesComponent implements OnInit {
 
   constructor(private scheduleService: scheduleService, private userHandler: UserService) { 
     this.currentUser = JSON.parse(localStorage.getItem('user')) as IUser
-    scheduleService.getSchedule().subscribe({
-      
-      next: games => {
-        games.forEach(game => {
-          if(game.centerHasApprovedOrDeclined && game.AR1hasApprovedOrDeclined && game.AR2hasApprovedOrDeclined && new Date(game.gameDate) < new Date)
-          {
-            if(userHandler.currentUser.displayName == game.assistantReferee1 ||userHandler.currentUser.displayName == game.assistantReferee2 || userHandler.currentUser.displayName == game.centerReferee )
-            {
-              this.recentGames.push(game);
+
+    if(this.currentUser.displayName != "John Doe")
+    {
+      scheduleService.getSchedule().subscribe({
+            next: games => {
+              games.forEach(game => {
+                if(game.centerHasApprovedOrDeclined && game.AR1hasApprovedOrDeclined && game.AR2hasApprovedOrDeclined && new Date(game.gameDate) < new Date)
+                {
+                  if(userHandler.currentUser.displayName == game.assistantReferee1 ||userHandler.currentUser.displayName == game.assistantReferee2 || userHandler.currentUser.displayName == game.centerReferee )
+                  {
+                    this.recentGames.push(game);
+                  }
+                }
+              });
             }
-          }
-        });
-      }
-    })
+          })
+    }
+    else
+    {
+      scheduleService.getAnonymousScedule().subscribe({
+        next: games => {
+          games.forEach(game => {
+            if(game.centerHasApprovedOrDeclined && game.AR1hasApprovedOrDeclined && game.AR2hasApprovedOrDeclined && new Date(game.gameDate) < new Date)
+            {
+              if(userHandler.currentUser.displayName == game.assistantReferee1 ||userHandler.currentUser.displayName == game.assistantReferee2 || userHandler.currentUser.displayName == game.centerReferee )
+              {
+                this.recentGames.push(game);
+              }
+            }
+          });
+        }
+      })
+    }
+
+    
   }
 
   ngOnInit(): void {
