@@ -1,0 +1,30 @@
+a[ng-reflect-router-link]
+{
+  color: white;
+  text-decoration: none;
+  color: #66fcf1;
+}
+
+.navbar{
+    justify-content: space-between;
+  }
+  span{
+    padding-right: 1rem;
+    padding-left: 2rem;
+    margin-top: 4px;
+  }
+.logo{
+ padding-left: 2rem;
+  font-size: 32px;
+}
+
+button{
+    text-align: center;
+    margin: auto;
+    margin-top: 1rem;
+}
+table {
+  width: 85%;
+  margin: auto;
+  margin-top: 1rem;
+}

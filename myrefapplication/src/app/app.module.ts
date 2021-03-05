@@ -26,6 +26,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SignupComponent } from './Components/signup/signup.component';
 import {AssignedGamesDialog} from './Components/landing/assigned-games/assigned-games.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { ScheduleComponent } from './Components/schedule/schedule.component';
+import { MatTableModule } from '@angular/material/table';
+import { CreateNewGameComponent } from './Components/schedule/create-new-game/create-new-game.component'  
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     DashboardComponent,
     SignupComponent,
     AssignedGamesDialog,
-    UpcomingGamesDialog
+    UpcomingGamesDialog,
+    ScheduleComponent,
+    CreateNewGameComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,9 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
       {path: '', component: LoginComponent},
       {path: 'login', component: LoginComponent},
       {path: 'landing', component: LandingComponent},
-      {path: 'signup', component: SignupComponent}
+      {path: 'signup', component: SignupComponent},
+      {path: 'schedule', component: ScheduleComponent},
+      {path: 'create-new-game', component: CreateNewGameComponent}
       
     ]),
     AngularFireModule.initializeApp(environment.firebase),
@@ -64,7 +71,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatTableModule
     
   ],
   providers: [],

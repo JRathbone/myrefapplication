@@ -1,0 +1,41 @@
+<mat-toolbar color="primary" class="navbar" >
+    
+    <div [style.color]="'#66FCF1'" class='logo'><a>myref.com</a></div>
+    <div [style.color]="'#66FCF1'" class="links">
+      <span><a [routerLink]="['/landing']">dashboard</a></span>
+      <span><a [routerLink]="['/schedule']">schedule</a></span>
+      <span><a style="cursor: pointer;" >log out</a></span>
+  
+    </div>
+</mat-toolbar>
+
+<button mat-raised-button color="accent" [routerLink]="['/create-new-game']">Create New Game</button>
+
+
+<table mat-table [dataSource]="allGames" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="Center">
+    <th mat-header-cell *matHeaderCellDef>Center</th>
+    <td mat-cell *matCellDef="let game"> {{game.centerReferee}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="Asst. Ref 1">
+    <th mat-header-cell *matHeaderCellDef> Asst. Ref 1 </th>
+    <td mat-cell *matCellDef="let game"> {{game. assistantReferee1}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="Asst. Ref 2">
+    <th mat-header-cell *matHeaderCellDef> Asst. Ref 2 </th>
+    <td mat-cell *matCellDef="let game"> {{game.state}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+</table>
+

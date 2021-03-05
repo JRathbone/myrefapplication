@@ -16,6 +16,7 @@ export class scheduleService
         this.database = db;
         this.fullSchedule = this.database.list<IGame>('/games').valueChanges();  
         this.anonymousSchedule = this.database.list<IGame>('/anonymousGames').valueChanges();  
+        
     }
     
     getSchedule(): Observable<IGame[]>

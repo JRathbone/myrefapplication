@@ -1,4 +1,5 @@
-<mat-grid-list cols="3" rowHeight="3.25:1" >
+<mat-dialog-content style="padding: 0px;">
+  <mat-grid-list cols="3" rowHeight="3.25:1" >
       <mat-grid-tile colspan="3" rowspan=".5">
           <h1 style="color: #66FCF1; font-size: 64px;">myref</h1>
       </mat-grid-tile>
@@ -12,9 +13,9 @@
               <thead>
                 <tr>
                   <th></th>
-                  <th>Home Team: <br> <span style="font-weight: normal;">Vikings FC</span></th>
-                  <th>Away Team: <br> <span style="font-weight: normal;">Blair Bears</span></th>
-                  <th><br>Location & Field: <br> <span style="font-weight: normal;">Spirit Park - Lincoln, NE<br>#2</span></th>
+                  <th>Home Team: <br> <span style="font-weight: normal; color: black;">Vikings FC</span></th>
+                  <th>Away Team: <br> <span style="font-weight: normal; color: black;">Blair Bears</span></th>
+                  <th><br>Location & Field: <br> <span style="font-weight: normal; font-size: medium; color: black;">Spirit Park - Lincoln, NE<br>#2</span></th>
                 </tr>
               </thead>
               <tbody>
@@ -22,19 +23,19 @@
                   <td>Score</td>
                   <td>1</td>
                   <td>0</td>
-                  <td><span style="font-weight: bold;">Game Date: </span><br> January 23, 2021 - 2:30pm</td>
+                  <td><span style="font-weight: bold;">Game Date: </span><br><span style="color: black; font-size: medium;">January 23, 2021 - 2:30pm</span></td>
                 </tr>
                 <tr>
                   <td>Yellow Cards</td>
                   <td>3</td>
                   <td>1</td>
-                  <td><span style="font-weight: bold;">Game Length: </span><br> 80 min</td>
+                  <td><span style="font-weight: bold;">Game Length: </span><br><span style="color: black; font-size: medium;">80 min</span></td>
                 </tr>
                 <tr>
                   <td>Red Cards</td>
                   <td>0</td>
                   <td>0</td>
-                  <td><span style="font-weight: bold;">Age Group: </span><br> U14 - Boys</td>
+                  <td><span style="font-weight: bold;">Age Group: </span><br><span style="color: black; font-size: medium;">U14 Boys</span></td>
                 </tr>
               </tbody>
               </table>
@@ -47,4 +48,6 @@
       <mat-grid-tile colspan="1" rowspan=".5">
           <button mat-raised-button color="accent">Submit Scores</button>
       </mat-grid-tile>
+
   </mat-grid-list>
+</mat-dialog-content>
