@@ -8,10 +8,76 @@
 </mat-toolbar>
 
 <div class="container">
+  <h2>Create New Game</h2>
   <form>
+    <mat-form-field>
+      <mat-label>Center Referee</mat-label>
+      <mat-select>
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Assistant Referee 1</mat-label>
+      <mat-select>
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Assistant Referee 2</mat-label>
+      <mat-select>
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Home Team</mat-label>
+      <mat-select>
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Away Team</mat-label>
+      <mat-select>
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Age Group</mat-label>
+      <mat-select>
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Game Length</mat-label>
+      <mat-select>
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+    </mat-form-field>
     <mat-form-field appearance="standard">
-      <mat-label>Input</mat-label>
-      <input type="text" matInput autofocus />
+      <mat-label>Date</mat-label>
+      <input type="datetime-local" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>City</mat-label>
+      <input type="text" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Address</mat-label>
+      <input type="text" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>location</mat-label>
+      <input type="text" matInput />
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Field Number</mat-label>
+      <input type="text" matInput />
     </mat-form-field>
   </form>
   <button type="button" mat-raised-button color="accent">
