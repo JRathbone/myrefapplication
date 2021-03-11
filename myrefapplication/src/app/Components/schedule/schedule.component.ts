@@ -20,6 +20,8 @@ export class ScheduleComponent implements OnInit {
     'Location',
     'Field #',
     'DateTime',
+    'Edit',
+    'Delete',
   ];
 
   dataSource: IGame[] = [];
@@ -28,5 +30,13 @@ export class ScheduleComponent implements OnInit {
 
   ngOnInit(): void {
     this.allGames = this.scheduleService.getSchedule();
+  }
+
+  editGameSubmit(gameNumber: number) {
+    console.log(gameNumber);
+  }
+
+  deleteGameSubmit(gameNumber: number) {
+    this.scheduleService.deleteGame(gameNumber);
   }
 }

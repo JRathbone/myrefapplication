@@ -30,4 +30,12 @@ export class scheduleService {
   getAnonymousScedule(): Observable<IGame[]> {
     return this.anonymousSchedule;
   }
+
+  deleteGame(gameNumber: number) {
+    this.database.database
+      .ref('/games')
+      .child('' + gameNumber)
+      .remove();
+    console.log('this works');
+  }
 }
