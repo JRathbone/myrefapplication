@@ -3,7 +3,6 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IGame } from 'src/backend/game';
-import { scheduleService } from 'src/backend/schedule.service';
 
 @Component({
   selector: 'create-new-game',

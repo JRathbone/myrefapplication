@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { IGame } from './game';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -10,13 +11,15 @@ export class scheduleService {
   fullSchedule: Observable<IGame[]>;
   database: AngularFireDatabase;
   anonymousSchedule: Observable<IGame[]>;
+  siteRouting: Router;
 
-  constructor(db: AngularFireDatabase) {
+  constructor(db: AngularFireDatabase, router: Router) {
     this.database = db;
     this.fullSchedule = this.database.list<IGame>('/games').valueChanges();
     this.anonymousSchedule = this.database
       .list<IGame>('/anonymousGames')
       .valueChanges();
+    this.siteRouting = router;
   }
 
   getSchedule(): Observable<IGame[]> {
@@ -24,6 +27,7 @@ export class scheduleService {
   }
 
   getGame(gamenumber: Number): IGame {
+    var path = '/games/' + gamenumber;
     return null;
   }
 
@@ -37,5 +41,10 @@ export class scheduleService {
       .child('' + gameNumber)
       .remove();
     console.log('this works');
+  }
+
+  editGame(gameNumber: number) {
+    this.siteRouting.navigate(['/edit-game', { num: gameNumber }]);
+    console.log(gameNumber);
   }
 }

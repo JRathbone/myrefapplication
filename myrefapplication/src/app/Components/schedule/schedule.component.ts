@@ -33,7 +33,7 @@ export class ScheduleComponent implements OnInit {
   }
 
   editGameSubmit(gameNumber: number) {
-    console.log(gameNumber);
+    this.scheduleService.editGame(gameNumber);
   }
 
   deleteGameSubmit(gameNumber: number) {

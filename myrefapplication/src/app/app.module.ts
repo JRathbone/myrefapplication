@@ -33,6 +33,7 @@ import { ScheduleComponent } from './Components/schedule/schedule.component';
 import { MatTableModule } from '@angular/material/table';
 import { CreateNewGameComponent } from './Components/schedule/create-new-game/create-new-game.component';
 import { MatSelectModule } from '@angular/material/select';
+import { EditGameComponent } from './Components/schedule/edit-game/edit-game.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { MatSelectModule } from '@angular/material/select';
     UpcomingGamesDialog,
     ScheduleComponent,
     CreateNewGameComponent,
+    EditGameComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +67,7 @@ import { MatSelectModule } from '@angular/material/select';
       { path: 'signup', component: SignupComponent },
       { path: 'schedule', component: ScheduleComponent },
       { path: 'create-new-game', component: CreateNewGameComponent },
+      { path: 'edit-game', component: EditGameComponent },
     ]),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,

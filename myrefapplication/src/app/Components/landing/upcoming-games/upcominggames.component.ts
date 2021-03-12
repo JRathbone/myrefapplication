@@ -1,6 +1,10 @@
 import { Inject } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from '@angular/material/dialog';
 import { IGame } from 'src/backend/game';
 import { scheduleService } from 'src/backend/schedule.service';
 import { IUser } from 'src/backend/user';
@@ -9,92 +13,98 @@ import { UserService } from 'src/backend/user.service';
 @Component({
   selector: 'upcominggames',
   templateUrl: './upcominggames.component.html',
-  styleUrls: ['./upcominggames.component.css']
+  styleUrls: ['./upcominggames.component.css'],
 })
 export class UpcominggamesComponent implements OnInit {
-
-  
   upcomingGames: IGame[] = [];
   selectedGame: IGame;
   currentUser: IUser;
-  
-  constructor(private scheduleService: scheduleService, public dialog: MatDialog, private userHandler: UserService) { 
-    this.currentUser = JSON.parse(localStorage.getItem('user')) as IUser
-    
-    if(this.currentUser.displayName != "John Doe")
-    {
+
+  constructor(
+    private scheduleService: scheduleService,
+    public dialog: MatDialog,
+    private userHandler: UserService
+  ) {
+    this.currentUser = JSON.parse(localStorage.getItem('user')) as IUser;
+
+    if (this.currentUser.displayName != 'John Doe') {
       scheduleService.getSchedule().subscribe({
-      next: games => {
-        games.forEach(game => {
-          
-          if(game.centerHasApprovedOrDeclined == true && game.centerReferee == this.currentUser.displayName && new Date(game.gameDate) > new Date )
-          {
-            this.upcomingGames.push(game);
-          }
-          else if(game.AR1hasApprovedOrDeclined == true && game.assistantReferee1 == this.currentUser.displayName && new Date(game.gameDate) > new Date )
-          {
-            this.upcomingGames.push(game);
-          }
-          else if(game.AR2hasApprovedOrDeclined == true && game.assistantReferee2 == this.currentUser.displayName && new Date(game.gameDate) > new Date )
-          {
-            this.upcomingGames.push(game);
-          }
-        });
-      }
-    })
-    } else {
-      scheduleService.getAnonymousScedule().subscribe({
-        next: games => {
-          games.forEach(game => {
-            console.log(game);
-            if(game.centerHasApprovedOrDeclined == true && game.centerReferee == this.currentUser.displayName && new Date(game.gameDate) > new Date )
-            {
+        next: (games) => {
+          games.forEach((game) => {
+            if (
+              game.centerHasApprovedOrDeclined == true &&
+              game.centerReferee == this.currentUser.displayName &&
+              new Date(game.gameDate) > new Date()
+            ) {
               this.upcomingGames.push(game);
-            }
-            else if(game.AR1hasApprovedOrDeclined == true && game.assistantReferee1 == this.currentUser.displayName && new Date(game.gameDate) > new Date )
-            {
+            } else if (
+              game.AR1hasApprovedOrDeclined == true &&
+              game.assistantReferee1 == this.currentUser.displayName &&
+              new Date(game.gameDate) > new Date()
+            ) {
               this.upcomingGames.push(game);
-            }
-            else if(game.AR2hasApprovedOrDeclined == true && game.assistantReferee2 == this.currentUser.displayName && new Date(game.gameDate) > new Date )
-            {
+            } else if (
+              game.AR2hasApprovedOrDeclined == true &&
+              game.assistantReferee2 == this.currentUser.displayName &&
+              new Date(game.gameDate) > new Date()
+            ) {
               this.upcomingGames.push(game);
             }
           });
-        }
-      })
+        },
+      });
+    } else {
+      scheduleService.getAnonymousScedule().subscribe({
+        next: (games) => {
+          games.forEach((game) => {
+            if (
+              game.centerHasApprovedOrDeclined == true &&
+              game.centerReferee == this.currentUser.displayName &&
+              new Date(game.gameDate) > new Date()
+            ) {
+              this.upcomingGames.push(game);
+            } else if (
+              game.AR1hasApprovedOrDeclined == true &&
+              game.assistantReferee1 == this.currentUser.displayName &&
+              new Date(game.gameDate) > new Date()
+            ) {
+              this.upcomingGames.push(game);
+            } else if (
+              game.AR2hasApprovedOrDeclined == true &&
+              game.assistantReferee2 == this.currentUser.displayName &&
+              new Date(game.gameDate) > new Date()
+            ) {
+              this.upcomingGames.push(game);
+            }
+          });
+        },
+      });
     }
-
-    
   }
 
-  ngOnInit(): void {
-    
-    
-  }
+  ngOnInit(): void {}
 
-  openDialog(gamenumber: Number): void
-  {
-    this.selectedGame = this.upcomingGames.filter(games => games.gameNumber == gamenumber)[0]
+  openDialog(gamenumber: Number): void {
+    this.selectedGame = this.upcomingGames.filter(
+      (games) => games.gameNumber == gamenumber
+    )[0];
     const dialogRef = this.dialog.open(UpcomingGamesDialog, {
       data: this.selectedGame,
       height: 'auto',
-      width: '50vw'
-   });
-    
+      width: '50vw',
+    });
   }
-
 }
 
 @Component({
   selector: 'upcoming-games-dialog',
   templateUrl: 'upcoming-games-dialog.html',
-  styleUrls: ['./upcoming-games-dialog.css']
+  styleUrls: ['./upcoming-games-dialog.css'],
 })
 export class UpcomingGamesDialog {
   private selectedGame: IGame;
-  constructor(public dialogRef: MatDialogRef<UpcomingGamesDialog>,@Inject(MAT_DIALOG_DATA) public data: IGame) {
-    
-  }
-
-
+  constructor(
+    public dialogRef: MatDialogRef<UpcomingGamesDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: IGame
+  ) {}
 }
