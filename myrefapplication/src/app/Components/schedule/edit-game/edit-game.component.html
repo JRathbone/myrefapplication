@@ -6,4 +6,149 @@
     <span><a style="cursor: pointer">log out</a></span>
   </div>
 </mat-toolbar>
-<p>{{ selectedGameNumber }}</p>
+
+<div class="container" *ngIf="selectedGame">
+  <h2>Edit Game</h2>
+
+  <form #form="ngForm" (ngSubmit)="submit(form)">
+    <div class="form-group text-start mb-3">
+      <label for="name">Center Referee</label>
+      <select
+        id="centerReferee"
+        name="centerReferee"
+        class="form-control"
+        [(ngModel)]="selectedGame.centerReferee"
+      >
+        <option *ngFor="let ref of referees">{{ ref }}</option>
+      </select>
+    </div>
+
+    <div class="form-group text-start mb-3">
+      <label for="name">Asst Referee 1</label>
+      <select
+        id="assistantReferee1"
+        name="assistantReferee1"
+        class="form-control"
+        [(ngModel)]="selectedGame.assistantReferee1"
+      >
+        <option *ngFor="let ref of referees">{{ ref }}</option>
+      </select>
+    </div>
+
+    <div class="form-group text-start mb-3">
+      <label for="name">Asst Referee 2</label>
+      <select
+        id="assistantReferee2"
+        name="assistantReferee2"
+        class="form-control"
+        [(ngModel)]="selectedGame.assistantReferee2"
+      >
+        <option *ngFor="let ref of referees">{{ ref }}</option>
+      </select>
+    </div>
+
+    <div class="form-group text-start mb-3">
+      <label for="name">Home Team</label>
+      <select
+        id="homeTeam"
+        name="homeTeam"
+        class="form-control"
+        [(ngModel)]="selectedGame.homeTeam"
+      >
+        <option *ngFor="let team of teams">{{ team }}</option>
+      </select>
+    </div>
+
+    <div class="form-group text-start mb-3">
+      <label for="name">Away Team</label>
+      <select
+        id="awayTeam"
+        name="awayTeam"
+        class="form-control"
+        [(ngModel)]="selectedGame.awayTeam"
+      >
+        <option *ngFor="let team of teams">{{ team }}</option>
+      </select>
+    </div>
+
+    <div class="form-group text-start mb-3">
+      <label for="name">Age Group</label>
+      <select
+        id="ageGroup"
+        name="ageGroup"
+        class="form-control"
+        [(ngModel)]="selectedGame.ageGroup"
+      >
+        <option *ngFor="let age of ageGroups">{{ age }}</option>
+      </select>
+    </div>
+
+    <div class="form-group text-start mb-3">
+      <label for="name">Game Length</label>
+      <select
+        id="gameLength"
+        name="gameLength"
+        class="form-control"
+        [(ngModel)]="selectedGame.gameLength"
+      >
+        <option *ngFor="let len of gameLengths">{{ len }}</option>
+      </select>
+    </div>
+
+    <div class="form-group text-start mb-3">
+      <label for="name">Date & Time</label>
+      <input
+        id="gameDate"
+        name="gameDate"
+        class="form-control"
+        [(ngModel)]="selectedGame.gameDate"
+        type="datetime-local"
+      />
+    </div>
+
+    <div class="form-group text-start mb-3">
+      <label for="name">City</label>
+      <input
+        id="city"
+        name="city"
+        class="form-control"
+        [(ngModel)]="selectedGame.city"
+        type="text"
+      />
+    </div>
+
+    <div class="form-group text-start mb-3">
+      <label for="name">Address</label>
+      <input
+        id="address"
+        name="address"
+        class="form-control"
+        [(ngModel)]="selectedGame.address"
+        type="text"
+      />
+    </div>
+    <div class="form-group text-start mb-3">
+      <label for="name">Location</label>
+      <input
+        id="location"
+        name="location"
+        class="form-control"
+        [(ngModel)]="selectedGame.location"
+        type="text"
+      />
+    </div>
+
+    <div class="form-group text-start mb-3">
+      <label for="name">Field Number</label>
+      <input
+        id="fieldNumber"
+        name="fieldNumber"
+        class="form-control"
+        [(ngModel)]="selectedGame.fieldNumber"
+        type="text"
+      />
+    </div>
+
+    <button class="btn btn-outline-info">Save Changes</button>
+  </form>
+</div>

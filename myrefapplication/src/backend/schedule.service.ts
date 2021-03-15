@@ -45,6 +45,13 @@ export class scheduleService {
 
   editGame(gameNumber: number) {
     this.siteRouting.navigate(['/edit-game', { num: gameNumber }]);
-    console.log(gameNumber);
+  }
+
+  saveChanges(game: IGame) {
+    this.database.database
+      .ref('/games')
+      .child('' + game.gameNumber)
+      .update(game);
+    this.siteRouting.navigate(['/schedule']);
   }
 }

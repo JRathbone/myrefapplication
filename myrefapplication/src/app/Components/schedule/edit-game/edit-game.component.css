@@ -16,3 +16,41 @@ span {
   padding-left: 2rem;
   font-size: 32px;
 }
+
+.form {
+  color: white;
+}
+
+.container {
+  width: 50%;
+  margin: 5% auto;
+  text-align: center;
+  border: 3px solid #66fcf1;
+  background-color: #f3f3f3;
+  border-radius: 15px;
+}
+
+input {
+  color: black;
+}
+button {
+  margin: 5px auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+mat-form-field {
+  width: 25%;
+}
+
+mat-option {
+  color: black;
+}
+
+h2 {
+  margin: 0.5rem auto;
+}

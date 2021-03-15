@@ -12,7 +12,6 @@ import { IGame } from 'src/backend/game';
 export class CreateNewGameComponent implements OnInit {
   database: AngularFireDatabase;
 
-  test: IGame;
   createGameForm: FormGroup;
   referees: string[] = [
     'Justin Rathbone',
