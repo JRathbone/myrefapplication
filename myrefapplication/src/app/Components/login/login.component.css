@@ -25,70 +25,83 @@ mat-card-content {
 
 .button {
   display: flex;
-  justify-content: center
-  
+  justify-content: center;
 }
 
-.navbar{
+.navbar {
   justify-content: space-between;
 }
 
-span{
+span {
   padding-right: 10rem;
   padding-left: 5rem;
 }
-.logo{
+.logo {
   padding-left: 2rem;
   font-size: 32px;
 }
 
-.material-icons{
+.material-icons {
   display: none;
 }
 
-a[ng-reflect-router-link]
-{
+a[ng-reflect-router-link] {
   color: white;
   text-decoration: none;
   color: #66fcf1;
 }
 
+.body {
+  background-image: url(../../../assets/background1.png);
+  height: 100vh;
+}
+
+.body h1 {
+  font-size: 5rem;
+  margin-top: 5%;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    
-  .logo{
+  .logo {
     font-size: 24px;
     margin-top: 4px;
   }
 
-  span{
+  span {
     padding-right: 0rem;
     padding-left: 2rem;
     font-size: 12px;
     margin-top: 4px;
   }
-
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  
-  span{
+  span {
     padding-right: 1rem;
     padding-left: 2rem;
   }
-  .logo{
+  .logo {
     padding-left: 2rem;
     font-size: 32px;
   }
-
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 992px) {
+}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+}
