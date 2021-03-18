@@ -26,60 +26,6 @@ export class UpcominggamesComponent implements OnInit {
     private userHandler: UserService
   ) {
     this.currentUser = JSON.parse(localStorage.getItem('user')) as IUser;
-
-    if (this.currentUser.displayName != 'John Doe') {
-      scheduleService.getSchedule().subscribe({
-        next: (games) => {
-          games.forEach((game) => {
-            if (
-              game.centerHasApprovedOrDeclined == true &&
-              game.centerReferee == this.currentUser.displayName &&
-              new Date(game.gameDate) > new Date()
-            ) {
-              this.upcomingGames.push(game);
-            } else if (
-              game.AR1hasApprovedOrDeclined == true &&
-              game.assistantReferee1 == this.currentUser.displayName &&
-              new Date(game.gameDate) > new Date()
-            ) {
-              this.upcomingGames.push(game);
-            } else if (
-              game.AR2hasApprovedOrDeclined == true &&
-              game.assistantReferee2 == this.currentUser.displayName &&
-              new Date(game.gameDate) > new Date()
-            ) {
-              this.upcomingGames.push(game);
-            }
-          });
-        },
-      });
-    } else {
-      scheduleService.getAnonymousScedule().subscribe({
-        next: (games) => {
-          games.forEach((game) => {
-            if (
-              game.centerHasApprovedOrDeclined == true &&
-              game.centerReferee == this.currentUser.displayName &&
-              new Date(game.gameDate) > new Date()
-            ) {
-              this.upcomingGames.push(game);
-            } else if (
-              game.AR1hasApprovedOrDeclined == true &&
-              game.assistantReferee1 == this.currentUser.displayName &&
-              new Date(game.gameDate) > new Date()
-            ) {
-              this.upcomingGames.push(game);
-            } else if (
-              game.AR2hasApprovedOrDeclined == true &&
-              game.assistantReferee2 == this.currentUser.displayName &&
-              new Date(game.gameDate) > new Date()
-            ) {
-              this.upcomingGames.push(game);
-            }
-          });
-        },
-      });
-    }
   }
 
   ngOnInit(): void {}

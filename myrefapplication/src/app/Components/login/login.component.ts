@@ -1,41 +1,30 @@
-
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+
 import { UserService } from 'src/backend/user.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
-  loginForm: FormGroup;
-
-  constructor(private fb: FormBuilder, private userHandler: UserService){
-    
+  user: any;
+  constructor(private userHandler: UserService) {
+    this.user = {
+      email: '',
+      password: '',
+    };
   }
 
-  ngOnInit(): void {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['',[ Validators.required, Validators.minLength(6)]]
-    });
-  }
-  
+  ngOnInit(): void {}
 
-  submit() : void{
-    if(this.loginForm.valid)
-    {
-      this.userHandler.signin(this.loginForm.value.email,this.loginForm.value.password)
-    }
-    else
-    {
-      console.log("invalid form");
-    }
+  submit(f: NgForm): void {
+    //this.userHandler.signin(this.loginForm.value.email,this.loginForm.value.password)
+    this.userHandler.signin(f.value.email, f.value.password);
   }
 
-  loginAnonymously() : void{
-    this.userHandler.signin("anonymous@mail.com","anonymous");
+  loginAnonymously(): void {
+    this.userHandler.signin('anonymous@mail.com', 'anonymous');
   }
 }

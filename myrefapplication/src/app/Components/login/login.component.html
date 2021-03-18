@@ -34,5 +34,37 @@
     <h1>MyRef.</h1>
     <h3>Referee Game Management. Simplified.</h3>
   </div>
-  <div class="login w-100 mt-5"></div>
+  <div class="login mt-5 text-white">
+    <form #form="ngForm" (ngSubmit)="submit(form)">
+      <div class="form-group text-start">
+        <label for="exampleInputEmail1">Email address</label>
+        <input
+          type="email"
+          class="form-control mb-3"
+          id="exampleInputEmail1"
+          name="email"
+          aria-describedby="emailHelp"
+          placeholder="Enter email"
+          [(ngModel)]="user.email"
+        />
+      </div>
+      <div class="form-group text-start">
+        <label for="exampleInputEmail1">Password</label>
+        <input
+          type="password"
+          class="form-control mb-3"
+          id="password"
+          name="password"
+          aria-describedby="emailHelp"
+          placeholder="Enter Password"
+          [(ngModel)]="user.password"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-info">Login</button>
+    </form>
+    <button type="submit" (click)="loginAnonymously()" class="btn btn-primary">
+      Anonymous Login
+    </button>
+  </div>
 </div>
